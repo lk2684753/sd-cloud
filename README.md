@@ -38,15 +38,14 @@ Store files in SDCloud in just a few steps!
 ![工作台登录正常备份 3](https://user-images.githubusercontent.com/42611777/150928969-a7cf2432-0b92-4462-b784-0b244e99fb0a.png)
 
 ### 💨CHOOSE TO STORE YOUR FILES
-Based on the N![文件无状态](https://user-images.githubusercontent.com/42611777/150929099-fad5f456-1ae8-4ff6-ae59-274e8a389703.png)
-EAR public chain, combined with the distributed storage technology IPFS and Filecoin, every step of your file operations will be recorded on the NEAR chain!
+Based on the NEAR public chain, combined with the distributed storage technology IPFS and Filecoin, every step of your file operations will be recorded on the NEAR chain!
+![文件无状态](https://user-images.githubusercontent.com/42611777/150929099-fad5f456-1ae8-4ff6-ae59-274e8a389703.png)
 
 ### 💨LOGIN WITH NEAR ACCOUNT
-You can view each file information, we support preview, share and other functions
+You can view each file information, we support preview, share and other functions.
 ![文件无状态备份](https://user-images.githubusercontent.com/42611777/150929138-06f8e7f1-2d08-496e-9422-7191558560bc.png)
 
 ## 🚀Value ecosystems
-
  NEAR is a decentralized application platform built to bridge the users of today's Internet to the blockchain-based web of the future. NEAR is a PoS Layer 1 blockchain platform, built with UX and DevX in mind. NEAR's novel sharding mechanism, Nightshade, parallelizes computation on chain and automatically increases capacity when needed, resulting in theoretically infinite scalability.
 
  Filecoin is a decentralized peer-to-peer storage network, allowing anyone to store and validate large-scale data as part of a global, 8-exabyte (and growing) network. Under the hood, all Filecoin nodes use the InterPlanetary File System (IPFS), a content-addressed protocol for storing and sharing data.

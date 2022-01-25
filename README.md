@@ -60,9 +60,6 @@ During the development process, we  actively communicate with the NEAR&Filecoin 
 
 You control your data! SDCloud doesn't keep your personal data; You can delete personal data from your account at any time. SDCloud has no advertising and does not sell your data; Your data is securely stored on the NEAR &IPFS&FILECOIN network.
 
-## ⛱ Support
-
-![编组 20](https://user-images.githubusercontent.com/42611777/150927672-2957f71a-adcd-4a5d-95d0-fa8231bd61fe.png)
 
 ## 📄 License
 
@@ -81,3 +78,7 @@ Source code in `SDCloud` is available under the [MIT License](/LICENSE).
 > FIL:f1ogknwo766wvyqfv4kkdine2xava4g6dmb2b7oca
 >
 > NEAR:lk2684753.near
+
+## ⛱ Support
+
+![编组 20](https://user-images.githubusercontent.com/42611777/150927672-2957f71a-adcd-4a5d-95d0-fa8231bd61fe.png)

@@ -63,7 +63,7 @@ You control your data! SDCloud doesn't keep your personal data; You can delete p
 
 ## 📄 License
 
-Source code in `SDCloud` is available under the [MIT License](/LICENSE).
+Source code in `SDCloud` is available under the [Apache-2.0 License](/LICENSE).
 
 ## 🔋 JetBrains OS licenses
 

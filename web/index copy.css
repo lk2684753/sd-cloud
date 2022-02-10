@@ -1,0 +1,719 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -moz-tap-highlight-color: transparent;
+  -webkit-overflow-scrolling: touch;
+  -moz-overflow-scrolling: touch;
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.GPU {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+}
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  font-size: 14px;
+  min-width: 1600px;
+  min-height: 944px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: linear-gradient(306deg, #2d3037 0%, #171a1f 100%);
+}
+.df {
+  display: flex;
+}
+.jcc {
+  justify-content: center;
+}
+.aic {
+  align-items: center;
+}
+@font-face {
+  font-family: 'DINPro';
+  src: url('./DINPro-Bold.otf') format('opentype');
+}
+
+.header {
+  user-select: none;
+  width: 100%;
+  height: 52px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 70px;
+  z-index: 3;
+}
+.header .logo {
+  width: 160px;
+  height: 28px;
+}
+.header .btnBox {
+  display: flex;
+  align-items: center;
+}
+.header .btnBox .btn {
+  cursor: pointer;
+  background: #33373f;
+  border-radius: 19px;
+  padding: 9px 24px;
+  margin-left: 26px;
+}
+.header .btnBox .btn.createAccount {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+}
+.header .btnBox .btn.createAccount:hover {
+  border-color: #00b8c4;
+  box-shadow: 0px 3px 21px 0px rgba(17, 19, 21, 0.7);
+}
+.loginAccount {
+  transition: all 0.3s ease-in-out;
+  position: fixed;
+  top: calc(100% - 234px - 42px);
+  right: 80px;
+  cursor: pointer;
+  margin-left: 52px;
+  padding: 12px 21px;
+  background: linear-gradient(180deg, #00b8c4 50%, #00777f 100%);
+  box-shadow: 0px 2px 17px 0px rgba(17, 19, 21, 1);
+  border-radius: 3px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loginAccount.sticky {
+  top: 10px;
+  padding: 9px 24px;
+  background: linear-gradient(180deg, #00b8c4 0%, #00777f 100%);
+  border-radius: 17px;
+}
+.header .btnBox .btn.noBg {
+  background: transparent;
+  display: none;
+}
+.header .btnBox .btn a {
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 17px;
+  text-decoration: none;
+}
+.scrollHiddenBox {
+  height: 944px;
+}
+.main div {
+  transition: all 0.3s ease-in-out;
+}
+.main .base {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+.main .base .bgLeftSlice {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: #1a1d24;
+}
+.main .base .BigTitle {
+  user-select: none;
+  position: absolute;
+  right: -50px;
+  top: 15px;
+  font-size: 320px;
+  font-family: DINPro-Black, DINPro;
+  font-weight: 900;
+  letter-spacing: 10px;
+  z-index: 1;
+  color: transparent;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.02);
+}
+.main .base .anime {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  width: 468px;
+  height: 502px;
+  overflow: hidden;
+  background-image: url('./images/a1.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.main .base .goDown {
+  position: absolute;
+  bottom: 52px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 37px;
+  height: 18px;
+}
+.main .base .goDown:before {
+  content: '';
+  position: absolute;
+  transform: translateY(-100%);
+  width: 37px;
+  height: 18px;
+  background: url('./images/a13.png') no-repeat center;
+  background-size: contain;
+  animation: downPage 1s linear infinite;
+  opacity: 0.2;
+}
+@keyframes downPage {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+}
+.main .base .goDown:after {
+  content: '';
+  position: absolute;
+  transform: translateY(-100%);
+  width: 37px;
+  height: 18px;
+  background: url('./images/a13.png') no-repeat center;
+  background-size: contain;
+  animation: downPageNext 1s linear infinite;
+  opacity: 0.6;
+}
+@keyframes downPageNext {
+  0% {
+    transform: translateY(0%);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+.main .base .switchChrome {
+  position: absolute;
+  right: 70px;
+  top: 245px;
+  z-index: 10;
+  box-shadow: 0 4px 33px rgba(06, 07, 09, 0.5);
+  flex-direction: column;
+  display: none;
+}
+@media screen and (max-width: 1440px) {
+  .main .base .switchChrome {
+    top: 215px;
+  }
+}
+.main .base .switchChrome img {
+  width: 892px;
+  height: 498px;
+  display: block;
+}
+.main .base .switchChrome .nav {
+  height: 22px;
+}
+.main .base .switchChrome .chromeTwo {
+  display: none;
+}
+.main .base .switchChrome .chromeThree {
+  display: none;
+}
+
+.main .scrollTitle {
+  user-select: none;
+  position: fixed;
+  left: 70px;
+  bottom: 170px;
+  z-index: 3;
+  color: white;
+  display: flex;
+  align-items: center;
+  transform: rotate(90deg);
+  transform-origin: 0% 100%;
+  opacity: 0.5;
+}
+.main .scrollTitle:after {
+  content: '';
+  display: inline-block;
+  width: 52px;
+  height: 1px;
+  background: #ffffff;
+  margin-left: 14px;
+}
+.main .scrollBtn {
+  user-select: none;
+  position: fixed;
+  right: 70px;
+  bottom: 52px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+}
+.main .scrollBtn .up {
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  margin-bottom: 35px;
+}
+.main .scrollBtn .down {
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+}
+.main > .context {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+.main .onePage .features {
+  position: absolute;
+  left: 0;
+  top: 276px;
+  padding: 52px 0 0 70px;
+  width: 580px;
+}
+.main .onePage .features .bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 336px;
+  height: 237px;
+  background: #2a2d34;
+}
+.main .onePage .features .title {
+  font-size: 42px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 59px;
+  letter-spacing: 3px;
+}
+.main .onePage .features .intro {
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 24px;
+  margin-top: 24px;
+}
+.main .onePage .quick {
+  position: absolute;
+  right: 0;
+  bottom: 231px;
+  padding: 52px 70px 0 0;
+  width: 580px;
+}
+.main .onePage .quick .bg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  width: 516px;
+  height: 224px;
+  background: #1a1d24;
+}
+.main .onePage .quick .title {
+  font-size: 42px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 59px;
+  letter-spacing: 3px;
+}
+.main .onePage .quick .intro {
+  width: 323px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 24px;
+  margin-top: 11px;
+}
+.twoPage {
+  position: fixed;
+  left: 161px;
+  top: 139px;
+  width: 60%;
+  height: 100%;
+  display: none;
+}
+.twoPage .topTitle {
+  font-size: 20px;
+  color: rgba(29, 241, 255, 0.8);
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  line-height: 28px;
+}
+.twoPage .topLine {
+  width: 157px;
+  height: 2px;
+  background: #ffffff;
+  margin-top: 119px;
+  opacity: 0.1;
+}
+.twoPage .bgTitle {
+  user-select: none;
+  position: absolute;
+  left: -400px;
+  top: 10px;
+  z-index: -1;
+  font-size: 437px;
+  font-family: DINPro-Bold, DINPro;
+  font-weight: bold;
+  color: transparent;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.02);
+  line-height: 564px;
+}
+.twoPage .textBox {
+  margin-top: 70px;
+  position: relative;
+}
+.twoPage .textBox .number {
+  position: absolute;
+  left: -85px;
+  top: 0;
+  z-index: 1;
+  font-size: 48px;
+  font-family: DINPro-Regular, DINPro;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 61px;
+  letter-spacing: 1px;
+}
+.twoPage .textBox .title {
+  font-size: 48px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 61px;
+}
+.twoPage .textBox .intro {
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 24px;
+  margin-top: 21px;
+  width: 60%;
+  font-size: 16px;
+}
+.twoPage .oneBox {
+  display: none;
+}
+.twoPage .twoBox {
+  display: none;
+}
+.twoPage .threeBox {
+  display: none;
+}
+
+.threePage {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 115px;
+  align-items: center;
+  flex-direction: column;
+  background: url('./images/a18.png') no-repeat center;
+  background-size: cover;
+  display: none;
+}
+.threePage .bgTitle {
+  user-select: none;
+  position: absolute;
+  left: 50%;
+  top: 47px;
+  transform: translateX(-50%);
+  font-size: 175px;
+  font-family: DINPro-Bold, DINPro;
+  font-weight: bold;
+  color: transparent;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.02);
+  line-height: 0.9;
+  letter-spacing: 14px;
+}
+.threePage > .title {
+  font-size: 42px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 59px;
+  letter-spacing: 3px;
+  text-align: center;
+}
+.threePage > .intro {
+  width: 619px;
+  height: 73px;
+  margin-top: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 24px;
+  text-align: center;
+}
+.threePage .boxList {
+  margin-top: 45px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 1432px;
+  position: relative;
+}
+.threePage .boxList .box {
+  cursor: pointer;
+  width: 454px;
+  height: 280px;
+  border-radius: 17px;
+  margin-top: 35px;
+  padding: 36px 52px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transform: scale(0.3);
+  margin-left: 35px;
+  background: rgba(51, 55, 63, 0.5);
+}
+.threePage .boxList .box:nth-child(3n - 2) {
+  margin-left: 0;
+}
+.boxList .lines {
+  position: absolute;
+  left: 100px;
+  top: 100px;
+  z-index: -1;
+  width: 454px;
+  height: 280px;
+}
+.threePage .boxList .box .title {
+  font-size: 23px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 32px;
+}
+.threePage .boxList .box .intro {
+  margin-top: 10px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 28px;
+  text-align: center;
+}
+
+.fourPage {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url('./images/a19.png') no-repeat center;
+  background-size: cover;
+  display: none;
+}
+.fourPage .bgTitle {
+  user-select: none;
+  position: absolute;
+  left: -100px;
+  top: 146px;
+  z-index: -1;
+  font-size: 175px;
+  font-family: DINPro-Bold, DINPro;
+  font-weight: bold;
+  color: transparent;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.02);
+  line-height: 225px;
+  letter-spacing: 14px;
+  white-space: nowrap;
+}
+.fourPage .title {
+  font-size: 42px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 59px;
+  letter-spacing: 3px;
+  text-align: center;
+}
+.fourPage .intro {
+  width: 1433px;
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 28px;
+  text-align: center;
+  margin-top: 66px;
+}
+.filecoin {
+  width: 611px;
+  height: 70px;
+  margin-top: 173px;
+}
+.fourPage .bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 44px;
+  background: rgba(0, 184, 196, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 12px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 17px;
+}
+.fourPage .bottom span {
+  font-size: 12px;
+  color: rgba(158, 0, 0, 1);
+  margin-left: 5px;
+  margin-right: 8px;
+}
+.fourPage .bottom img {
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  margin-left: 17px;
+}
+
+.bgAnime {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.1;
+  filter: blur(10px);
+}
+
+.bgAnime div {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.bgAnime div:nth-child(1) {
+  background: linear-gradient(
+    238deg,
+    rgb(214, 132, 7) 0%,
+    rgb(41, 209, 97) 100%
+  );
+  animation: move 24s infinite linear;
+}
+
+.bgAnime div:nth-child(2) {
+  background: linear-gradient(
+    238deg,
+    rgb(181, 184, 9) 0%,
+    rgb(221, 35, 150) 100%
+  );
+  mix-blend-mode: soft-light;
+  animation: move 12s infinite linear;
+}
+
+.bgAnime div:nth-child(3) {
+  background: linear-gradient(
+    238deg,
+    rgb(176, 224, 224) 48%,
+    rgb(38, 197, 163) 100%
+  );
+  mix-blend-mode: multiply;
+  animation: move 12s infinite linear;
+}
+
+.bgAnime div:nth-child(4) {
+  background: radial-gradient(
+    100% 85% at 0% 100%,
+    rgb(241, 44, 44) 0%,
+    rgb(197, 185, 9) 50%,
+    rgb(87, 241, 195) 100%
+  );
+  mix-blend-mode: saturation;
+  animation: move 12s infinite linear;
+}
+
+.bgAnime div:nth-child(5) {
+  background: radial-gradient(
+    100% 225% at 0% 100%,
+    rgb(238, 228, 228) 0%,
+    rgb(241, 7, 85) 100%
+  );
+  mix-blend-mode: difference;
+  animation: move 12s infinite linear;
+}
+
+.bgAnime div:nth-child(6) {
+  background: radial-gradient(
+    100% 140% at 100% 0%,
+    rgb(36, 226, 124) 0%,
+    rgb(159, 194, 3) 50%,
+    rgb(35, 133, 199) 100%
+  );
+  mix-blend-mode: overlay;
+  animation: move 12s infinite linear;
+}
+
+@keyframes move {
+  0% {
+    filter: unset;
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}

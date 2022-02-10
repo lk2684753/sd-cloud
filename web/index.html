@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SDCloud</title>
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.mousewheel@3.1.9/jquery.mousewheel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/near-api-js@0.43.1/dist/near-api-js.min.js"></script>
+    <script src="./index.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <img class="logo" src="./images/a4.png" alt="SDCloud" />
+      <div class="btnBox">
+        <div class="btn createAccount">
+          <a href="javascript:void(0)">Create a NEAR Wallet</a>
+        </div>
+        <div class="loginAccount">Login with NEAR</div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="scrollHiddenBox"></div>
+      <div class="base">
+        <div class="bgLeftSlice"></div>
+        <div class="BigTitle">SDCLOUD</div>
+        <div class="anime"></div>
+        <div class="goDown"></div>
+        <div class="switchChrome animate__fadeOutRight">
+          <img src="./images/a17.png" class="nav" alt="" srcset="" />
+          <img
+            src="./images/a16.png"
+            class="chromePage chromeOne"
+            alt=""
+            srcset=""
+          />
+          <img
+            src="./images/a14.png"
+            class="chromePage chromeTwo"
+            alt=""
+            srcset=""
+          />
+          <img
+            src="./images/a15.png"
+            class="chromePage chromeThree"
+            alt=""
+            srcset=""
+          />
+        </div>
+      </div>
+      <div class="scrollTitle">SCROLL</div>
+      <div class="scrollBtn">
+        <img class="up" src="./images/a3.png" alt="SDCloud" />
+        <img class="down" src="./images/a2.png" alt="SDCloud" />
+      </div>
+      <div class="context">
+        <div class="onePage">
+          <div class="features">
+            <div class="bg"></div>
+            <div class="title">FEATURES</div>
+            <div class="intro">
+              Based on the new Web3 storage cloud dapp developed by NEAR and
+              Filecoin ecosystem, you can store files in the decentralized
+              SDCloud!
+            </div>
+          </div>
+          <div class="quick">
+            <div class="bg"></div>
+            <div class="title">QUICK</div>
+            <div class="df aic">
+              <div class="intro">
+                It only takes a few seconds to Claim your page with the NEAR
+                account and store your data!
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="twoPage animate__fadeOutDown">
+          <div class="topTitle">Store files in SDCloud in just a few steps</div>
+          <div class="topLine"></div>
+          <div class="bgTitle">01</div>
+          <div class="oneBox textBox">
+            <div class="number">01</div>
+            <div class="title">LOGIN WITH</div>
+            <div class="title">NEAR ACCOUNT</div>
+            <div class="intro">
+              Your SDCloud page will be claimed with your NEAR ID
+              (example.near).
+            </div>
+          </div>
+          <div class="twoBox textBox">
+            <div class="number">02</div>
+            <div class="title">CHOOSE TO</div>
+            <div class="title">STORE YOUR FILES</div>
+            <div class="intro">
+              Based on the NEAR public chain, combined with the distributed
+              storage technology IPFS and Filecoin, every step of your file
+              operations will be recorded on the NEAR chain
+            </div>
+          </div>
+          <div class="threeBox textBox">
+            <div class="number">03</div>
+            <div class="title">VIEW STORAGE INFORMATION</div>
+            <div class="title">ON THE PAGE</div>
+            <div class="intro">
+              You can view each file information, we support preview, share and
+              other functions
+            </div>
+          </div>
+        </div>
+        <div class="threePage">
+          <div class="bgTitle">ABOUT</div>
+          <div class="title">ABOUT</div>
+          <div class="boxList">
+            <div class="box">
+              <div class="title">CONTRACT</div>
+              <div class="intro">
+                NEAR is a decentralized development platform where developers
+                can host serverless applications and smart contracts; SDCloud
+                contracts are written and deployed on NEAR, supporting various
+                file operations;
+              </div>
+            </div>
+            <div class="box">
+              <div class="title">STORAGE</div>
+              <div class="intro">
+                Filecoin is a decentralized peer-to-peer storage network,
+                allowing anyone to store and validate large-scale data as part
+                of a global, 15-exabyte (and growing) network. Under the hood,
+                all Filecoin nodes use the InterPlanetary File System (IPFS), a
+                content-addressed protocol for storing and sharing data.
+              </div>
+            </div>
+            <div class="box">
+              <div class="title">PAYMENT</div>
+              <div class="intro">
+                You only need to pay a small amount of NEAR as an on-chain
+                transaction fee to store your hotspot data on the IPFS network;
+                cold backup data, according to the quotation and file size of
+                the storage miners, store the data on the Filecoin network, your
+                file operations Every step will be recorded on the chain.
+              </div>
+            </div>
+            <div class="box">
+              <div class="title">IDENTIDY</div>
+              <div class="intro">
+                We host a DID implementation on the NEAR chain, also known as
+                NEAR DID. This specification complies with the requirements
+                specified in the current DID specification published by the NEAR
+                & W3C Certificate Community Organization.
+              </div>
+            </div>
+            <div class="box">
+              <div class="title">CONCISION</div>
+              <div class="intro">
+                In dapp, your file types will be classified by default; support
+                multiple file types to download, preview, share; you can share
+                your favorites to others at any time.
+              </div>
+            </div>
+            <div class="box">
+              <div class="title">POLICY</div>
+              <div class="intro">
+                You control your data! SDCloud doesn't keep your personal data;
+                You can delete personal data from your account at any time.
+                SDCloud has no advertising and does not sell your data; Your
+                data is securely stored on the NEAR&IPFS&FILECOIN network
+              </div>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 449.79 276.49"
+              stroke="#247583"
+              fill="none"
+              stroke-width="0"
+              class="lines"
+            >
+              <path
+                d="M430.58,275.17H21.44a17.52,17.52,0,0,1-17.5-17.5V21a17.52,17.52,0,0,1,17.5-17.5H430.58A17.52,17.52,0,0,1,448.08,21v236.7A17.52,17.52,0,0,1,430.58,275.17ZM21.44,4.47A16.52,16.52,0,0,0,4.94,21v236.7a16.52,16.52,0,0,0,16.5,16.5H430.58a16.52,16.52,0,0,0,16.5-16.5V21a16.52,16.52,0,0,0-16.5-16.5Z"
+                transform="translate(-3.94 -3.47)"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="fourPage">
+          <div class="bgTitle">ECOLOGICAL VALUE</div>
+          <div class="title">ECOLOGICAL VALUE</div>
+          <div class="intro">
+            NEAR aims to connect users of the Internet today to the
+            blockchain-based networks of the future. NEAR is a PoS layer 1
+            blockchain platform built with UX and DevX in mind. NEAR's novel
+            sharding mechanism, Nightshade, parallelizes on-chain computation
+            and automatically increases capacity when needed, enabling
+            theoretically infinite scalability; Filecoin is a decentralized
+            peer-to-peer data network through which anyone can store or verify
+            data. All Filecoin nodes use the IPFS protocol - one of the most
+            widely used distributed protocols designed for Web3 We explore from
+            the intersection of Filecoin and NEAR. As the entire ecosystem
+            develops in a diversified direction, in the near future, there may
+            be more data interactions between different systems, eventually
+            serving more and more users. Keep human data alive.
+          </div>
+          <img src="./images/a12.png" class="filecoin" />
+          <div class="bottom">
+            © 2022 SDCloud · Proudly Built with Filecoin&NEAR <span>♥</span>
+            <img src="./images/a6.png" class="github" />
+            <img src="./images/a7.png" class="discord" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bgAnime GPU">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,719 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -moz-tap-highlight-color: transparent;
+  -webkit-overflow-scrolling: touch;
+  -moz-overflow-scrolling: touch;
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.GPU {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+}
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  font-size: 0.729167vw;
+  min-width: 83.333333vw;
+  min-height: 49.166667vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: linear-gradient(306deg, #2d3037 0%, #171a1f 100%);
+}
+.df {
+  display: flex;
+}
+.jcc {
+  justify-content: center;
+}
+.aic {
+  align-items: center;
+}
+@font-face {
+  font-family: 'DINPro';
+  src: url('./DINPro-Bold.otf') format('opentype');
+}
+
+.header {
+  user-select: none;
+  width: 100%;
+  height: 2.708333vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3.645833vw;
+  z-index: 3;
+}
+.header .logo {
+  width: 8.333333vw;
+  height: 1.458333vw;
+}
+.header .btnBox {
+  display: flex;
+  align-items: center;
+}
+.header .btnBox .btn {
+  cursor: pointer;
+  background: #33373f;
+  border-radius: 0.989583vw;
+  padding: 0.46875vw 1.25vw;
+  margin-left: 1.354167vw;
+}
+.header .btnBox .btn.createAccount {
+  border: 0.052083vw solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+}
+.header .btnBox .btn.createAccount:hover {
+  border-color: #00b8c4;
+  box-shadow: 0vw 0.15625vw 1.09375vw 0vw rgba(17, 19, 21, 0.7);
+}
+.loginAccount {
+  transition: all 0.3s ease-in-out;
+  position: fixed;
+  top: calc(100% - 12.1875vw - 2.1875vw);
+  right: 4.166667vw;
+  cursor: pointer;
+  margin-left: 2.708333vw;
+  padding: 0.625vw 1.09375vw;
+  background: linear-gradient(180deg, #00b8c4 50%, #00777f 100%);
+  box-shadow: 0vw 0.104167vw 0.885417vw 0vw rgba(17, 19, 21, 1);
+  border-radius: 0.15625vw;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 0.885417vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loginAccount.sticky {
+  top: 0.520833vw;
+  padding: 0.46875vw 1.25vw;
+  background: linear-gradient(180deg, #00b8c4 0%, #00777f 100%);
+  border-radius: 0.885417vw;
+}
+.header .btnBox .btn.noBg {
+  background: transparent;
+  display: none;
+}
+.header .btnBox .btn a {
+  font-size: 0.625vw;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 0.885417vw;
+  text-decoration: none;
+}
+.scrollHiddenBox {
+  height: 49.166667vw;
+}
+.main div {
+  transition: all 0.3s ease-in-out;
+}
+.main .base {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+.main .base .bgLeftSlice {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: #1a1d24;
+}
+.main .base .BigTitle {
+  user-select: none;
+  position: absolute;
+  right: -2.604167vw;
+  top: 0.78125vw;
+  font-size: 16.666667vw;
+  font-family: DINPro-Black, DINPro;
+  font-weight: 900;
+  letter-spacing: 0.520833vw;
+  z-index: 1;
+  color: transparent;
+  text-shadow: 0 0 0.260417vw rgba(255, 255, 255, 0.02);
+}
+.main .base .anime {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  width: 24.375vw;
+  height: 26.145833vw;
+  overflow: hidden;
+  background-image: url('./images/a1.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.main .base .goDown {
+  position: absolute;
+  bottom: 2.708333vw;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1.927083vw;
+  height: 0.9375vw;
+}
+.main .base .goDown:before {
+  content: '';
+  position: absolute;
+  transform: translateY(-100%);
+  width: 1.927083vw;
+  height: 0.9375vw;
+  background: url('./images/a13.png') no-repeat center;
+  background-size: contain;
+  animation: downPage 1s linear infinite;
+  opacity: 0.2;
+}
+@keyframes downPage {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+}
+.main .base .goDown:after {
+  content: '';
+  position: absolute;
+  transform: translateY(-100%);
+  width: 1.927083vw;
+  height: 0.9375vw;
+  background: url('./images/a13.png') no-repeat center;
+  background-size: contain;
+  animation: downPageNext 1s linear infinite;
+  opacity: 0.6;
+}
+@keyframes downPageNext {
+  0% {
+    transform: translateY(0%);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+.main .base .switchChrome {
+  position: absolute;
+  right: 3.645833vw;
+  top: 12.760417vw;
+  z-index: 10;
+  box-shadow: 0 0.208333vw 1.71875vw rgba(06, 07, 09, 0.5);
+  flex-direction: column;
+  display: none;
+}
+@media screen and (max-width: 1440px) {
+  .main .base .switchChrome {
+    top: 11.197917vw;
+  }
+}
+.main .base .switchChrome img {
+  width: 46.458333vw;
+  height: 25.9375vw;
+  display: block;
+}
+.main .base .switchChrome .nav {
+  height: 1.145833vw;
+}
+.main .base .switchChrome .chromeTwo {
+  display: none;
+}
+.main .base .switchChrome .chromeThree {
+  display: none;
+}
+
+.main .scrollTitle {
+  user-select: none;
+  position: fixed;
+  left: 3.645833vw;
+  bottom: 8.854167vw;
+  z-index: 3;
+  color: white;
+  display: flex;
+  align-items: center;
+  transform: rotate(90deg);
+  transform-origin: 0% 100%;
+  opacity: 0.5;
+}
+.main .scrollTitle:after {
+  content: '';
+  display: inline-block;
+  width: 2.708333vw;
+  height: 0.052083vw;
+  background: #ffffff;
+  margin-left: 0.729167vw;
+}
+.main .scrollBtn {
+  user-select: none;
+  position: fixed;
+  right: 3.645833vw;
+  bottom: 2.708333vw;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+}
+.main .scrollBtn .up {
+  cursor: pointer;
+  width: 1.458333vw;
+  height: 1.458333vw;
+  margin-bottom: 1.822917vw;
+}
+.main .scrollBtn .down {
+  cursor: pointer;
+  width: 1.458333vw;
+  height: 1.458333vw;
+}
+.main > .context {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+.main .onePage .features {
+  position: absolute;
+  left: 0;
+  top: 14.375vw;
+  padding: 2.708333vw 0 0 3.645833vw;
+  width: 30.208333vw;
+}
+.main .onePage .features .bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 17.5vw;
+  height: 12.34375vw;
+  background: #2a2d34;
+}
+.main .onePage .features .title {
+  font-size: 2.1875vw;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 3.072917vw;
+  letter-spacing: 0.15625vw;
+}
+.main .onePage .features .intro {
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.25vw;
+  margin-top: 1.25vw;
+}
+.main .onePage .quick {
+  position: absolute;
+  right: 0;
+  bottom: 12.03125vw;
+  padding: 2.708333vw 3.645833vw 0 0;
+  width: 30.208333vw;
+}
+.main .onePage .quick .bg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  width: 26.875vw;
+  height: 11.666667vw;
+  background: #1a1d24;
+}
+.main .onePage .quick .title {
+  font-size: 2.1875vw;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 3.072917vw;
+  letter-spacing: 0.15625vw;
+}
+.main .onePage .quick .intro {
+  width: 16.822917vw;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.25vw;
+  margin-top: 0.572917vw;
+}
+.twoPage {
+  position: fixed;
+  left: 8.385417vw;
+  top: 7.239583vw;
+  width: 60%;
+  height: 100%;
+  display: none;
+}
+.twoPage .topTitle {
+  font-size: 1.041667vw;
+  color: rgba(29, 241, 255, 0.8);
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  line-height: 1.458333vw;
+}
+.twoPage .topLine {
+  width: 8.177083vw;
+  height: 0.104167vw;
+  background: #ffffff;
+  margin-top: 6.197917vw;
+  opacity: 0.1;
+}
+.twoPage .bgTitle {
+  user-select: none;
+  position: absolute;
+  left: -20.833333vw;
+  top: 0.520833vw;
+  z-index: -1;
+  font-size: 22.760417vw;
+  font-family: DINPro-Bold, DINPro;
+  font-weight: bold;
+  color: transparent;
+  text-shadow: 0 0 0.260417vw rgba(255, 255, 255, 0.02);
+  line-height: 29.375vw;
+}
+.twoPage .textBox {
+  margin-top: 3.645833vw;
+  position: relative;
+}
+.twoPage .textBox .number {
+  position: absolute;
+  left: -4.427083vw;
+  top: 0;
+  z-index: 1;
+  font-size: 2.5vw;
+  font-family: DINPro-Regular, DINPro;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 3.177083vw;
+  letter-spacing: 0.052083vw;
+}
+.twoPage .textBox .title {
+  font-size: 2.5vw;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 3.177083vw;
+}
+.twoPage .textBox .intro {
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.25vw;
+  margin-top: 1.09375vw;
+  width: 60%;
+  font-size: 0.833333vw;
+}
+.twoPage .oneBox {
+  display: none;
+}
+.twoPage .twoBox {
+  display: none;
+}
+.twoPage .threeBox {
+  display: none;
+}
+
+.threePage {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 5.989583vw;
+  align-items: center;
+  flex-direction: column;
+  background: url('./images/a18.png') no-repeat center;
+  background-size: cover;
+  display: none;
+}
+.threePage .bgTitle {
+  user-select: none;
+  position: absolute;
+  left: 50%;
+  top: 2.447917vw;
+  transform: translateX(-50%);
+  font-size: 9.114583vw;
+  font-family: DINPro-Bold, DINPro;
+  font-weight: bold;
+  color: transparent;
+  text-shadow: 0 0 0.260417vw rgba(255, 255, 255, 0.02);
+  line-height: 0.9;
+  letter-spacing: 0.729167vw;
+}
+.threePage > .title {
+  font-size: 2.1875vw;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 3.072917vw;
+  letter-spacing: 0.15625vw;
+  text-align: center;
+}
+.threePage > .intro {
+  width: 32.239583vw;
+  height: 3.802083vw;
+  margin-top: 0.729167vw;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.25vw;
+  text-align: center;
+}
+.threePage .boxList {
+  margin-top: 2.34375vw;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 74.583333vw;
+  position: relative;
+}
+.threePage .boxList .box {
+  cursor: pointer;
+  width: 23.645833vw;
+  height: 14.583333vw;
+  border-radius: 0.885417vw;
+  margin-top: 1.822917vw;
+  padding: 1.875vw 2.708333vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transform: scale(0.3);
+  margin-left: 1.822917vw;
+  background: rgba(51, 55, 63, 0.5);
+}
+.threePage .boxList .box:nth-child(3n - 2) {
+  margin-left: 0;
+}
+.boxList .lines {
+  position: absolute;
+  left: 5.208333vw;
+  top: 5.208333vw;
+  z-index: -1;
+  width: 23.645833vw;
+  height: 14.583333vw;
+}
+.threePage .boxList .box .title {
+  font-size: 1.197917vw;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.666667vw;
+}
+.threePage .boxList .box .intro {
+  margin-top: 0.520833vw;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.458333vw;
+  text-align: center;
+}
+
+.fourPage {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url('./images/a19.png') no-repeat center;
+  background-size: cover;
+  display: none;
+}
+.fourPage .bgTitle {
+  user-select: none;
+  position: absolute;
+  left: -5.208333vw;
+  top: 7.604167vw;
+  z-index: -1;
+  font-size: 9.114583vw;
+  font-family: DINPro-Bold, DINPro;
+  font-weight: bold;
+  color: transparent;
+  text-shadow: 0 0 0.260417vw rgba(255, 255, 255, 0.02);
+  line-height: 11.71875vw;
+  letter-spacing: 0.729167vw;
+  white-space: nowrap;
+}
+.fourPage .title {
+  font-size: 2.1875vw;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 3.072917vw;
+  letter-spacing: 0.15625vw;
+  text-align: center;
+}
+.fourPage .intro {
+  width: 74.635417vw;
+  font-size: 0.729167vw;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.458333vw;
+  text-align: center;
+  margin-top: 3.4375vw;
+}
+.filecoin {
+  width: 31.822917vw;
+  height: 3.645833vw;
+  margin-top: 9.010417vw;
+}
+.fourPage .bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2.291667vw;
+  background: rgba(0, 184, 196, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 0.625vw;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 0.885417vw;
+}
+.fourPage .bottom span {
+  font-size: 0.625vw;
+  color: rgba(158, 0, 0, 1);
+  margin-left: 0.260417vw;
+  margin-right: 0.416667vw;
+}
+.fourPage .bottom img {
+  cursor: pointer;
+  width: 1.458333vw;
+  height: 1.458333vw;
+  margin-left: 0.885417vw;
+}
+
+.bgAnime {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.1;
+  filter: blur(0.520833vw);
+}
+
+.bgAnime div {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.bgAnime div:nth-child(1) {
+  background: linear-gradient(
+    238deg,
+    rgb(214, 132, 7) 0%,
+    rgb(41, 209, 97) 100%
+  );
+  animation: move 24s infinite linear;
+}
+
+.bgAnime div:nth-child(2) {
+  background: linear-gradient(
+    238deg,
+    rgb(181, 184, 9) 0%,
+    rgb(221, 35, 150) 100%
+  );
+  mix-blend-mode: soft-light;
+  animation: move 12s infinite linear;
+}
+
+.bgAnime div:nth-child(3) {
+  background: linear-gradient(
+    238deg,
+    rgb(176, 224, 224) 48%,
+    rgb(38, 197, 163) 100%
+  );
+  mix-blend-mode: multiply;
+  animation: move 12s infinite linear;
+}
+
+.bgAnime div:nth-child(4) {
+  background: radial-gradient(
+    100% 85% at 0% 100%,
+    rgb(241, 44, 44) 0%,
+    rgb(197, 185, 9) 50%,
+    rgb(87, 241, 195) 100%
+  );
+  mix-blend-mode: saturation;
+  animation: move 12s infinite linear;
+}
+
+.bgAnime div:nth-child(5) {
+  background: radial-gradient(
+    100% 225% at 0% 100%,
+    rgb(238, 228, 228) 0%,
+    rgb(241, 7, 85) 100%
+  );
+  mix-blend-mode: difference;
+  animation: move 12s infinite linear;
+}
+
+.bgAnime div:nth-child(6) {
+  background: radial-gradient(
+    100% 140% at 100% 0%,
+    rgb(36, 226, 124) 0%,
+    rgb(159, 194, 3) 50%,
+    rgb(35, 133, 199) 100%
+  );
+  mix-blend-mode: overlay;
+  animation: move 12s infinite linear;
+}
+
+@keyframes move {
+  0% {
+    filter: unset;
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}

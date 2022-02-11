@@ -35,8 +35,7 @@ Store files in SDCloud in just a few steps!
 ### 💨LOGIN WITH NEAR ACCOUNT
 
   Your SDCloud page will be claimed with your NEAR ID (example.near).
-![工作台登录正常备份 3](https://user-images.githubusercontent.com/42611777/150928969-a7cf2432-0b92-4462-b784-0b244e99fb0a.png)
-
+![workbench](https://user-images.githubusercontent.com/42611777/153567395-f9a2813d-1056-4eb8-800f-ad0298ba8fc2.png)
 ### 💨CHOOSE TO STORE YOUR FILES
 Based on the NEAR public chain, combined with the distributed storage technology IPFS and Filecoin, every step of your file operations will be recorded on the NEAR chain!
 ![文件无状态](https://user-images.githubusercontent.com/42611777/150929099-fad5f456-1ae8-4ff6-ae59-274e8a389703.png)

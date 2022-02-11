@@ -1,7 +1,7 @@
 <p align="center" style = {text-align:center}>
 <img src="https://bafybeidfio3womq6nci2pkptilegjwehmgfz5kbjussd6toovjdo63vb7u.ipfs.dweb.link/logo.png" />
 <br/><br/>
-<b>New web3 storage cloud dapp developed by based on NEAR and Filecoin Ecology.</b>
+<b>New web3 storage cloud dapp developed by based on NEAR and Filecoin Ecology</b>
 <br/><br/>
 </p>
 

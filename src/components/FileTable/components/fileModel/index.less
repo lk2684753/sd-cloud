@@ -1,0 +1,217 @@
+.fileModel {
+  width: 640px;
+  height: 296px;
+  background: #33373f;
+  box-shadow: 0px 12px 34px 0px rgba(17, 19, 21, 0.6);
+  border-radius: 8px;
+  z-index: 2021;
+  position: absolute;
+  bottom: 20px;
+  right: 40px;
+  .modelTitleBox {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+    .titleText {
+      // width: 36px;
+      height: 25px;
+      margin-left: 40px;
+      font-size: 18px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #85878c;
+      line-height: 25px;
+    }
+
+    .closeBox {
+      width: 56px;
+      display: flex;
+      justify-content: space-between;
+
+      .FileBoxIcon {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  .modelBox {
+    width: 560px;
+    margin-left: 40px;
+
+    .fileTableBar {
+      height: 170px;
+      overflow-y: auto;
+    }
+  }
+
+  .spaceLine {
+    width: 100%;
+    height: 1px;
+    background: #2f333a;
+    opacity: 0.8;
+  }
+
+  .fileModelTable {
+    display: flex;
+    color: rgba(255, 255, 255, 0.4);
+    margin-top: 20px;
+  }
+
+  .progressList {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 14px;
+    .fileName {
+      width: 200px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      word-break: break-all;
+      margin-right: 19px;
+      color: #c38585;
+    }
+
+    .fileName::after {
+    }
+
+    .filesize {
+      width: 114px;
+      max-width: 114px;
+      margin-right: 14px;
+      color: #c7ab82;
+    }
+
+    .type {
+      width: 145px;
+      max-width: 145px;
+      margin-right: 20px;
+      color: #64a78e;
+    }
+
+    .check {
+      cursor: pointer;
+      width: 35px;
+      margin-right: 10px;
+      color: #64a78e;
+    }
+
+    .circleBorder {
+      width: 15px;
+      height: 15px;
+      padding: 3px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background: rgb(63, 249, 220);
+      background: linear-gradient(0deg, rgba(63, 249, 220, 0.1) 33%, rgba(63, 249, 220, 1) 100%);
+      animation: spin 0.8s linear 0s infinite;
+    }
+    .circleCore {
+      width: 100%;
+      height: 100%;
+      background-color: #1d2630;
+      border-radius: 50%;
+    }
+    @keyframes spin {
+      from {
+        transform: rotate(0);
+      }
+      to {
+        transform: rotate(359deg);
+      }
+    }
+    .loader14 {
+      width: 30px;
+      height: 30px;
+      display: inline-flex;
+      align-items: center;
+      position: relative;
+      &::after,
+      &::before {
+        content: '';
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 5px solid #d9363e;
+        position: absolute;
+        // margin-top: -10px;
+        margin-left: 20px;
+        left: 0;
+        top: 0;
+        animation: animloader14 2s linear infinite;
+      }
+      &::after {
+        animation-delay: 0.2s;
+      }
+    }
+    @keyframes animloader14 {
+      0% {
+        transform: scale(0);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 0;
+      }
+    }
+  }
+  .successBox {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    .checkmark {
+      width: 20px;
+      margin: 0 auto;
+      margin-top: 0px;
+    }
+
+    .path {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 0;
+      animation: dash 2s ease-in-out;
+      -webkit-animation: dash 2s ease-in-out;
+    }
+
+    .spin {
+      animation: spin 2s;
+      -webkit-animation: spin 2s;
+      transform-origin: 50% 50%;
+      -webkit-transform-origin: 50% 50%;
+    }
+
+    @-webkit-keyframes dash {
+      0% {
+        stroke-dashoffset: 1000;
+      }
+      100% {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes dash {
+      0% {
+        stroke-dashoffset: 1000;
+      }
+      100% {
+        stroke-dashoffset: 0;
+      }
+    }
+  }
+}
+.waitBox {
+  position: absolute;
+  bottom: 20px;
+  right: 40px;
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(174deg, #111315 0%, #2c2f36 100%);
+  box-shadow: 0px 4px 12px 0px #111315;
+  border-radius: 50%;
+  line-height: 74px;
+  text-align: center;
+  z-index: 2022;
+}

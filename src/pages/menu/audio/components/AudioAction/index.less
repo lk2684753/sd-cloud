@@ -1,0 +1,197 @@
+.AudioControl {
+  display: flex;
+  padding: 20px 0 40px;
+  .audioImage {
+    width: 160px;
+    height: 160px;
+    border-radius: 8px;
+    background: linear-gradient(
+      164deg,
+      #111315 0%,
+      rgba(17, 19, 21, 0) 100%,
+      rgba(17, 19, 21, 0) 100%
+    );
+    box-shadow: 0px 8px 30px 0px rgba(17, 19, 21, 0.4);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .controlBox {
+    margin-left: 40px;
+    padding-top: 10px;
+    flex: auto;
+    .titleBox {
+      display: flex;
+      align-items: center;
+      .title {
+        font-size: 16px;
+        color: #ffffff;
+      }
+      .user {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.7);
+        margin-left: 12px;
+      }
+    }
+    .infoBox {
+      margin-top: 27px;
+      display: flex;
+      align-items: center;
+      > div {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        margin-left: 40px;
+        &:first-child {
+          margin-left: 0;
+        }
+        .title {
+          color: rgba(255, 255, 255, 0.7);
+        }
+        .value {
+          color: rgba(255, 255, 255, 0.45);
+        }
+        .pointer {
+          cursor: pointer;
+        }
+      }
+    }
+    .actionBox {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
+      .actionLeft {
+        display: flex;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.4);
+        .left {
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+        }
+        .playAndStop {
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 36px;
+          height: 36px;
+          // margin-left: 16px;
+          color: rgba(255, 255, 255, 1);
+          border-radius: 50%;
+        }
+        .right {
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 28px;
+          height: 28px;
+          // margin-left: 16px;
+          border-radius: 50%;
+        }
+        .volume {
+          cursor: pointer;
+          margin-left: 36px;
+        }
+        .download {
+          cursor: pointer;
+          margin-left: 32px;
+        }
+      }
+      .actionRight {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.3);
+      }
+    }
+    .progress {
+      position: relative;
+      &.ant-slider {
+        &:hover,
+        &:active {
+          .ant-slider-handle {
+            width: 10px;
+            height: 10px;
+            margin-top: -4px;
+          }
+        }
+        .ant-slider-rail {
+          height: 1px;
+          background: rgba(51, 55, 63, 0.7);
+        }
+        .ant-slider-track {
+          height: 1px;
+          background: linear-gradient(90deg, #006567 0%, #00e8ff 100%);
+          border-radius: 1px;
+        }
+        .ant-slider-handle {
+          width: 4px;
+          height: 4px;
+          border: none;
+          background: rgba(0, 184, 196, 1);
+          margin-top: -1px;
+        }
+      }
+    }
+  }
+}
+
+.audioVolumeProgressVertical {
+  &.ant-slider {
+    &.ant-slider-vertical {
+      width: auto;
+      margin: 0;
+      padding: 0 2px;
+    }
+    &:hover,
+    &:active {
+      .ant-slider-handle {
+        width: 8px;
+        height: 8px;
+        margin-left: -4px;
+      }
+    }
+    .ant-slider-rail {
+      width: 1px;
+      background: rgba(66, 71, 80, 1);
+    }
+    .ant-slider-track {
+      width: 1px;
+      background: linear-gradient(90deg, #006567 0%, #00e8ff 100%);
+      border-radius: 1px;
+    }
+    .ant-slider-handle {
+      width: 4px;
+      height: 4px;
+      border: none;
+      background: rgba(0, 184, 196, 1);
+      margin-left: -2px;
+    }
+    .ant-slider-mark {
+      display: none;
+    }
+  }
+}
+.audioVolumePopover {
+  &.ant-popover {
+    .ant-popover-arrow {
+      .ant-popover-arrow-content {
+        background: rgba(51, 55, 63, 1);
+      }
+    }
+    .ant-popover-inner {
+      background: rgba(51, 55, 63, 1);
+      .ant-popover-inner-content {
+        padding: 7px;
+      }
+    }
+  }
+}
+.audioValumeProgress {
+  height: 52px;
+}

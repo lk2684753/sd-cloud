@@ -1,0 +1,74 @@
+  .loader {
+    width: 100px;
+    height: 100px;
+    display: inline-table;
+    box-sizing: border-box;
+    position: relative;
+    border-spacing: 0.3em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+
+  .loader .row {
+    display: table-row;
+  }
+
+  .loader .row span {
+    display: table-cell;
+    position: relative;
+    background: #fdfdfd;
+    opacity: 0;
+    animation: flicker 0.5985999999999999s ease-out infinite alternate;
+    
+    @keyframes flicker {
+        
+        from,
+        20% {
+            opacity: 0;
+        }
+        
+        100%,
+        to {
+            opacity: 1;
+        }
+    }
+}
+    
+
+
+  .loader .row:nth-child(1) span:nth-child(1) {
+    animation-delay: .50s;
+  }
+
+  .loader .row:nth-child(1) span:nth-child(2) {
+    animation-delay: .70s;
+  }
+
+  .loader .row:nth-child(1) span:nth-child(3) {
+    animation-delay: .60s;
+  }
+
+  .loader .row:nth-child(2) span:nth-child(1) {
+    animation-delay: .20s;
+  }
+
+  .loader .row:nth-child(2) span:nth-child(2) {
+    animation-delay: .80s;
+  }
+
+  .loader .row:nth-child(2) span:nth-child(3) {
+    animation-delay: .90s;
+  }
+
+  .loader .row:nth-child(3) span:nth-child(1) {
+    animation-delay: .10s;
+  }
+
+  .loader .row:nth-child(3) span:nth-child(2) {
+    animation-delay: .30s;
+  }
+
+  .loader .row:nth-child(3) span:nth-child(3) {
+    animation-delay: .40s;
+  }

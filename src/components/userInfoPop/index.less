@@ -1,0 +1,754 @@
+.userInfoPop {
+  .disabled {
+    display: none;
+  }
+
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  main,
+  nav,
+  section,
+  summary {
+    display: block;
+  }
+
+  audio,
+  canvas,
+  video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+  }
+
+  audio:not([controls]) {
+    display: none;
+  }
+
+  [hidden] {
+    display: none;
+  }
+
+
+  /* =============================================================================
+   Base
+   ========================================================================== */
+
+  /*
+ * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
+ * 2. Force vertical scrollbar in non-IE
+ * 3. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
+ */
+
+  *,
+  *:before,
+  *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  html {
+    font-size: 100%;
+    overflow-y: scroll;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  input[type=button],
+  input[type=submit],
+  input[type=text],
+  input[type=search],
+  input[type=password],
+  select,
+  button,
+  textarea {
+    margin: 0;
+    cursor: pointer;
+    outline: none;
+    vertical-align: top;
+  }
+
+  input[type=submit] {
+    border: none 0;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+  }
+
+  input[type=radio],
+  input[type=checkbox] {
+    margin: 0;
+    padding: 0;
+  }
+
+  input[type=text],
+  input[type=search],
+  select,
+  textarea {
+    cursor: default;
+  }
+
+  button {
+    border: none 0;
+  }
+
+  *:first-child+html input.button {
+    overflow: visible;
+    /* remove padding from left/right */
+    width: auto !important;
+  }
+
+  /*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate
+ * Also: hot pink! (or customize the background color to match your design)
+ */
+
+  ::selection {
+    color: #fff;
+    background-color: #328efd;
+  }
+
+  ::-moz-selection {
+    color: #fff;
+    background-color: #328efd;
+  }
+
+  a {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  a:hover,
+  a:focus,
+  a:active {
+    text-decoration: none;
+  }
+
+  a:hover,
+  a:active {
+    outline: 0;
+    text-decoration: none;
+  }
+
+  /* =============================================================================
+   Typography
+   ========================================================================== */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+    padding: 0;
+  }
+
+  blockquote {
+    margin: 1em 40px;
+  }
+
+  hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+  }
+
+  /* =============================================================================
+   Lists
+   ========================================================================== */
+
+  ul,
+  ol {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  dd {
+    margin: 0 0 0 40px;
+  }
+
+  nav ul,
+  nav ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* =============================================================================
+   Embedded content
+   ========================================================================== */
+
+  /*
+ * Improve image quality when scaled in IE7
+ * code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
+ */
+
+  img {
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+  }
+
+  /*
+ * Correct overflow displayed oddly in IE9
+ */
+
+  svg:not(:root) {
+    overflow: hidden;
+  }
+
+  /* =============================================================================
+   Figures
+   ========================================================================== */
+
+  figure {
+    margin: 0;
+  }
+
+  /* =============================================================================
+   Forms
+   ========================================================================== */
+
+  form {
+    margin: 0;
+  }
+
+  fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Indicate that 'label' will shift focus to the associated form element */
+  label {
+    cursor: pointer;
+  }
+
+  /*
+ * 1. Correct color not inheriting in IE6/7/8/9
+ * 2. Correct alignment displayed oddly in IE6/7
+ */
+
+  legend {
+    border: 0;
+    *margin-left: -7px;
+    padding: 0;
+  }
+
+  /*
+ * 1. Correct font-size not inheriting in all browsers
+ * 2. Remove margins in FF3/4 S5 Chrome
+ * 3. Define consistent vertical alignment display in all browsers
+ */
+
+  button,
+  input,
+  select,
+  textarea {
+    font-size: 100%;
+    margin: 0;
+    vertical-align: baseline;
+    *vertical-align: middle;
+  }
+
+  /* Select styling in Firefox */
+  @-moz-document url-prefix() {
+    select {
+      padding: 0.8em 0.75em;
+    }
+  }
+
+  /*
+ * 1. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)
+ */
+
+  button,
+  input {
+    line-height: normal;
+  }
+
+  *:first-child+html input.button {
+    overflow: visible;
+    /* remove padding from left/right */
+    width: auto !important;
+  }
+
+  /*
+ * 1. Display hand cursor for clickable form elements
+ * 2. Allow styling of clickable form elements in iOS
+ * 3. Correct inner spacing displayed oddly in IE7 (doesn't effect IE6)
+ */
+
+  button,
+  input[type="button"],
+  input[type="reset"],
+  input[type="submit"] {
+    cursor: pointer;
+    -webkit-appearance: button;
+    *overflow: visible;
+  }
+
+  input[type=submit] {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+  }
+
+  /*
+ * Consistent box sizing and appearance
+ */
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    margin: 0;
+    padding: 0;
+  }
+
+  input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+  }
+
+  input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+
+  /*
+ * Remove inner padding and border in FF3/4: h5bp.com/l
+ */
+
+  button::-moz-focus-inner,
+  input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+
+  /*
+ * 1. Remove default vertical scrollbar in IE6/7/8/9
+ * 2. Allow only vertical resizing
+ */
+
+  textarea {
+    overflow: auto;
+    vertical-align: top;
+    resize: vertical;
+  }
+
+  /* Colors for form validity */
+  input:valid,
+  textarea:valid {}
+
+  input:invalid,
+  textarea:invalid {
+    background-color: #f0dddd;
+  }
+
+
+  /* =============================================================================
+   Tables
+   ========================================================================== */
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  /* =============================================================================
+   Non-semantic helper classes
+   Please define your styles before this section.
+   ========================================================================== */
+
+  /* Hide from both screenreaders and browsers: h5bp.com/u */
+
+  /* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+
+  /* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+
+  /* Hide visually and from screenreaders, but maintain layout */
+
+  /* Contain floats: h5bp.com/q */
+  .clearfix:before,
+  .clearfix:after {
+    content: "";
+    display: table;
+  }
+
+  .clearfix:after {
+    clear: both;
+  }
+
+  .clearfix {
+    *zoom: 1;
+  }
+
+  /* #Typography Variables
+================================================== */
+  @baseFont: 'Source Sans Pro', helvetica, sans-serif;
+  @source: 'Source Sans Pro', sans-serif;
+  @monser: 'Montserrat', sans-serif;
+  /* #Colour Variables
+================================================== */
+  @baseColour: #333333;
+  @blue: #3babf1;
+
+  a {
+    text-decoration: none;
+  }
+
+  h1 {
+    font-size: 2.350em;
+    line-height: 1.25;
+    font-weight: 300;
+  }
+
+  /* =============================================================================
+   Layout
+   ========================================================================== */
+  body {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    font-family: @baseFont;
+    color: @baseColour;
+    line-height: 1.6;
+    font-weight: normal;
+    background-color: @blue;
+  }
+
+  .container {
+    position: relative;
+    .transition(0.5s);
+
+    &.toggled {
+      -webkit-filter: blur(8px);
+      -moz-filter: blur(8px);
+      -o-filter: blur(8px);
+      -ms-filter: blur(8px);
+      filter: blur(8px);
+      .transition(0.5s);
+    }
+  }
+
+  div.screen {
+    margin: 0 auto;
+    width: 329px;
+    height: 493px;
+    overflow: hidden;
+    position: relative;
+    top: 10%;
+    background-color: @baseColour;
+    .box-shadow(0px 0px 10px rgba(00, 00, 00, 0.25));
+
+    nav.mainNav {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 0;
+      height: 100%;
+      width: 100%;
+      padding: 2em;
+      .opacity(0);
+      -webkit-transform: scale(0.85);
+      -ms-transform: scale(0.85);
+      transform: scale(0.85);
+      .transition(0.5s);
+
+      &.toggled {
+        display: block;
+        z-index: 10;
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+        .opacity(1);
+        .transition(0.5s);
+      }
+
+      ul {
+        padding: 2em 0 0 0;
+        text-align: center;
+
+        li {
+          margin: auto;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+          a {
+            font-size: 1.250em;
+            color: #fff;
+            padding: 1em 0;
+            font-weight: 300;
+            display: block;
+            text-align: center;
+            .transition(0.5s);
+
+            &:last-child {
+              border: none;
+            }
+
+            &:hover {
+              .opacity(0.45);
+              .transition(0.5s);
+              padding: 1em;
+            }
+          }
+
+          input {
+            font-size: 1.250em;
+            color: #fff;
+            padding: 1em 0;
+            font-weight: 300;
+            display: block;
+            text-align: center;
+          }
+        }
+      }
+
+      .userinfoPopContent {
+        height: 260px;
+        overflow: auto;
+
+        .identityBoxTitle {
+          width: 100%;
+          padding: 10px 0 10px 0;
+          display: flex;
+          justify-content: space-between;
+
+          .indentityBoxIcon {
+            line-height: 20px;
+          }
+        }
+      }
+
+      .indentityBoxIconBox {
+        display: flex;
+        width: 100%;
+        justify-content: right;
+
+        .indentityBoxIcon {
+          margin-left: 10px;
+        }
+      }
+    }
+
+    header {
+      position: absolute;
+      top: 0;
+      z-index: 15;
+
+      a.target-burger {
+        margin: 1.125em;
+        width: 3.250em;
+        height: 3.250em;
+        position: absolute;
+        display: block;
+        .transition(0.5s);
+
+        &:hover {
+          cursor: pointer;
+          .opacity(0.45);
+        }
+
+        &.toggled {
+          ul.buns {
+            li.bun {
+              -webkit-transform: rotate(45deg) translateZ(0);
+              transform: rotate(45deg) translateZ(0);
+
+              &:last-child {
+                -webkit-transform: rotate(-45deg) translateZ(0);
+                transform: rotate(-45deg) translateZ(0);
+              }
+            }
+          }
+        }
+
+        ul.buns {
+          width: 1.625em;
+          height: 1.625em;
+          list-style: none;
+          margin: -1.625em/2 0 0 -1.625em/2;
+          padding: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transition: -webkit-transform 1s cubic-bezier(.23, 1, .32, 1), color 1s cubic-bezier(.23, 1, .32, 1);
+          transition: transform 1s cubic-bezier(.23, 1, .32, 1), color 1s cubic-bezier(.23, 1, .32, 1);
+          -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+          color: #fff;
+
+          li.bun {
+            width: 100%;
+            height: 2px;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            margin-top: -.75px;
+            -webkit-transform: translateY(-3.75px) translateZ(0);
+            transform: translateY(-3.75px) translateZ(0);
+            -webkit-transition: -webkit-transform 1s cubic-bezier(.23, 1, .32, 1), background-color 1s cubic-bezier(.23, 1, .32, 1);
+            transition: transform 1s cubic-bezier(.23, 1, .32, 1), background-color 1s cubic-bezier(.23, 1, .32, 1);
+
+            &:last-child {
+              -webkit-transform: translateY(3.75px) translateZ(0);
+              transform: translateY(3.75px) translateZ(0);
+            }
+          }
+        }
+      }
+    }
+
+    div.appContent {
+      position: relative;
+      z-index: 5;
+
+      ul.contentList {
+        li {
+          article {
+            figure {
+              position: relative;
+
+              &:before {
+                content: '';
+                position: absolute;
+                z-index: 2;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(00, 00, 00, 0.35);
+              }
+
+              img {
+                width: 100%;
+                line-height: 1;
+                display: block;
+              }
+
+              figcaption {
+                color: #fff;
+                position: absolute;
+                z-index: 5;
+                bottom: 0;
+                padding: 2em 2em 2.5em 2em;
+
+                h1,
+                span {
+                  .text-shadow(0px 0px 10px rgba(00, 00, 00, 0.25))
+                }
+
+                h1 {
+                  padding: 0 0 0.25em 0;
+                  margin: 0 0 0.25em 0;
+                  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+                }
+
+                span {
+                  font-family: @monser;
+                  display: block;
+
+                  &.category {
+                    letter-spacing: 0.2em;
+                    text-transform: uppercase;
+                    font-size: 0.8em;
+                    padding: 0 0 0.3em;
+                    color: rgba(255, 255, 255, 0.7);
+                  }
+
+                  &.price {
+                    font-size: 1.3em;
+                    float: right;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .indentityBox {
+    width: 100%;
+    text-align: left;
+    color: #fff;
+    h3 {
+      color: white;
+    }
+  }
+
+  .indentityContent {}
+
+  /* =============================================================================
+   Mixins & Functions
+   ========================================================================== */
+  .inline-block {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+  }
+
+  .opacity (@opacity) {
+    -webkit-opacity: @opacity;
+    -moz-opacity: @opacity;
+    opacity: @opacity;
+  }
+
+  .border-radius (@radius) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+  }
+
+  .box-shadow (@string) {
+    -webkit-box-shadow: @string;
+    -moz-box-shadow: @string;
+    box-shadow: @string;
+  }
+
+  .text-shadow (@string) {
+    -webkit-text-shadow: @string;
+    -moz-text-shadow: @string;
+    text-shadow: @string;
+  }
+
+  .transition(@duration) {
+    -webkit-transition: all @duration ease;
+    -moz-transition: all @duration ease;
+    -o-transition: all @duration ease;
+    transition: all @duration ease;
+  }
+
+  .animated(@duration) {
+    -webkit-animation-duration: @duration;
+    -moz-animation-duration: @duration;
+    animation-duration: @duration;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+}

@@ -1,0 +1,112 @@
+.logoCircle{
+    position: relative;
+    left: 50px;
+    top: 450px;
+    .pulpo {
+        position: relative;
+        animation: pulpo 6s ease-in-out infinite;
+    }
+    
+    @keyframes pulpo {
+        0% {
+            transform: translateY(0)
+        }
+        50% {
+            transform: translateY(30px)
+        }
+        100% {
+            transform: translateY(0)
+        }
+    }
+    
+    .heroLogoCircles {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-repeat: no-repeat;
+        background-position: center;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+    
+    .heroCircle {
+        position: absolute;
+    }
+    
+    .atomLogo {
+        transform: scale(2);
+        position: absolute;
+        width: 0px;
+        height: 0px;
+        margin-left: 20px;
+    }
+    img{
+        width: 1600px;
+        height: 1600px;
+    }
+    .heroLogoCircle1 {
+        animation: circle 150s forwards linear infinite;
+    }
+    .heroLogoCircle2 {
+        animation: circle 160s forwards linear infinite;
+    }
+    .heroLogoCircle3 {
+        animation: circle 162s forwards linear infinite;
+    }
+    .heroLogoCircle4 {
+        animation: circle 181s forwards linear infinite;
+    }
+    .heroLogoCircle5 {
+        animation: circle 502s forwards linear infinite;
+    }
+    .heroLogoCircle6 {
+        animation: circle 525s forwards linear infinite;
+    }
+    .heroLogoCircle7 {
+        animation: circle 560s forwards linear infinite;
+    }
+    .heroLogoCircle8 {
+        animation: circle 587s forwards linear infinite;
+  }
+  .heroLogoCircle9 {
+    animation: circle 832s forwards linear infinite;
+  }
+  .heroLogoCircle10 {
+      animation: circle 876s forwards linear infinite;
+    }
+    
+    @keyframes circle {
+    0% {
+        transform: rotate(0deg);
+      transform-origin: center;
+    }
+  
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 1440px) {
+    #main {
+        transform: scale(1.2);
+    }
+}
+
+@media (max-width: 980px) {
+    #main {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 720px) {
+    #main {
+        transform: scale(.8);
+    }
+}
+
+@media (max-width: 420px) {
+    #main {
+        transform: scale(.6);
+    }
+}
+}

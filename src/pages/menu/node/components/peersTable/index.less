@@ -1,0 +1,200 @@
+.PeersTable {
+  margin-top: 20px;
+  width: 100%;
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  .header {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 24px;
+    > div {
+      min-width: 100px;
+      display: flex;
+      align-items: center;
+    }
+    .checkedBox {
+      min-width: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .sort {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 12px;
+      margin-left: 4px;
+      &.top {
+        .top {
+          color: white;
+        }
+      }
+      &.bottom {
+        .bottom {
+          color: white;
+        }
+      }
+    }
+  }
+  .icon {
+    margin-left: 20px;
+    margin-right: 10px;
+  }
+  .headerItemBox::after {
+    content: '...';
+  }
+  .content {
+    // 设置一个固定高度0用于兼容amtd无限加载功能识别
+    //   height: 100px;
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+    overflow-y: auto;
+    .tableListBox {
+      margin-bottom: 16px;
+      &:hover {
+        box-shadow: 0px 4px 30px 0px rgba(17, 19, 21, 0.7);
+        .setIcon {
+          color: rgb(12, 178, 154);
+        }
+      }
+      .tableList {
+        display: flex;
+        height: 88px;
+        align-items: center;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.45);
+        > div {
+          min-width: 100px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .checkedBox {
+          min-width: 86px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .nameBox {
+          margin-left: 16px;
+          font-size: 15px;
+          color: rgba(255, 255, 255, 0.8);
+        }
+        .keyBox {
+          display: inline-block;
+          background: #22252b;
+          border-radius: 2px;
+          padding: 4px 12px;
+          margin-right: 30px;
+          width: 400px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
+.nowrap {
+  width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.fileSetBottomRender {
+  position: fixed;
+  bottom: 0;
+  left: 220px;
+  z-index: 2;
+  width: calc(100% - 220px);
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: #2d3037;
+  box-shadow: 54px -4px 54px rgba(17, 19, 21, 0.8);
+  .box {
+    cursor: pointer;
+    &:first-child {
+      margin-left: 0;
+    }
+    &.disabled {
+      cursor: default;
+      .innerBox {
+        color: rgba(255, 255, 255, 0.2);
+      }
+    }
+    .card {
+      width: calc(100% + 1px);
+    }
+    margin-left: 32px;
+    .innerBox {
+      width: 96px;
+      height: 79px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: rgba(255, 255, 255, 0.7);
+      .title {
+        margin-top: 8px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.setBox {
+  display: flex;
+  flex-direction: column;
+  .line {
+    min-width: 122px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 4px;
+    padding-left: 22px;
+    &:first-child {
+      margin-top: 0;
+    }
+    .title {
+      margin-left: 12px;
+      font-size: 14px;
+    }
+  }
+}
+:global {
+  .TableListBox {
+    &:hover {
+      .ant-checkbox-wrapper {
+        .ant-checkbox {
+          .ant-checkbox-inner {
+            background: url('~@/assets/images/a5.png') no-repeat center;
+          }
+        }
+      }
+    }
+  }
+  .tableSetPopover {
+    padding-top: 0;
+    .ant-popover-arrow {
+      display: none;
+    }
+    .ant-popover-inner {
+      background: #33373f;
+      box-shadow: 0px 12px 34px 0px rgba(17, 19, 21, 0.6);
+      border-radius: 8px;
+      .ant-popover-inner-content {
+        padding: 24px 20px;
+      }
+    }
+  }
+}

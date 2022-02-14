@@ -1,0 +1,99 @@
+.Card {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  > .bg1 {
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    z-index: -1;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+  }
+  > .bg2 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    &.defaultBorder {
+      background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.1),
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0)
+        ),
+        linear-gradient(
+          120deg,
+          rgba(255, 255, 255, 0.1),
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0)
+        );
+    }
+  }
+  &.borderAnimation:hover {
+    > .bg2 {
+      animation: bg2Animation 0.2s linear;
+      animation-fill-mode: forwards;
+    }
+  }
+  @keyframes bg2Animation {
+    10% {
+      background: linear-gradient(
+        175deg,
+        rgba(0, 232, 255, 0.1),
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0)
+      );
+    }
+    40% {
+      background: linear-gradient(
+        175deg,
+        rgba(0, 232, 255, 0.3),
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0)
+      );
+    }
+    60% {
+      background: linear-gradient(
+        175deg,
+        rgba(0, 232, 255, 0.6),
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0)
+      );
+    }
+    85% {
+      background: linear-gradient(
+        175deg,
+        rgba(0, 232, 255, 0.8),
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0)
+      );
+    }
+    100% {
+      background: linear-gradient(
+          175deg,
+          rgba(0, 232, 255, 1),
+          rgba(0, 101, 103, 0.22),
+          rgba(0, 101, 103, 0.22)
+        ),
+        linear-gradient(
+          120deg,
+          rgba(255, 255, 255, 0.16),
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0)
+        );
+    }
+  }
+}

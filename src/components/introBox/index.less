@@ -1,0 +1,116 @@
+@import "../../assets/font/latinExt.css";
+
+.intro {
+  // background: #222;
+  font-family: 'Audiowide', Helvetica;
+  line-height: 26px;
+  color: #94FFB8;
+  width: 800px;
+  text-shadow: 0 0 0.4em #2DE0DD;
+  // padding:15px;
+
+  .bar {
+    // background: #2DE0DD;
+    box-shadow: 0px 0px 0 #2DE0DD,
+      0px 0px 4px #2DE0DD,
+      0px 0px 8px #2DE0DD,
+      0px 0px 16px #FFF;
+    border-radius: 4px;
+    position: absolute;
+  }
+
+  .left {
+    width: 2px;
+    -webkit-animation: left 10s linear infinite;
+    -moz-animation: left 10s linear infinite;
+  }
+
+
+  .cs {
+    font-family: 'Audiowide', Helvetica;
+    font-size: 58px;
+    width: 767px;
+    line-height: 76px;
+    color: #2DE0DD;
+    text-shadow: 0 0 0.4em #2DE0DD;
+    padding-bottom: 10px;
+    // padding-left: 25px;
+    // margin-left: 20%;
+    margin-right: 20%;
+    position: relative;
+    z-index: 4;
+    // border-bottom: 3px dotted #E6E6E6;
+    // border-left: 25px solid #E6E6E6;
+    opacity: .9;
+    /* //display:none; */
+  }
+  .intr0-text-p{
+    // margin-left: 30px;
+    color: rgba(255, 255, 255, .6) ;
+    font-size: 14px;
+    width: 680px;
+    line-height: 28px;
+    text-align: left;
+  }
+
+  @keyframes blink {
+    0% {
+      border-left: 25px solid #E6E6E6;
+    }
+
+    50% {
+      border-left: 25px solid #222;
+    }
+
+    100% {
+      border-left: 25px solid #E6E6E6;
+    }
+  }
+
+  @-moz-keyframes blink {
+    0% {
+      border-left: 25px solid #E6E6E6;
+    }
+
+    50% {
+      border-left: 25px solid #222;
+    }
+
+    100% {
+      border-left: 25px solid #E6E6E6;
+    }
+  }
+
+  .cs:hover {
+    opacity: 1;
+    text-shadow: 0 0 .6em #2DE0DD;
+    // -webkit-animation: blink 1s ease infinite;
+    // -moz-animation: blink 1s ease infinite;
+  }
+
+  .wrapper {
+    // width: 80%;
+    padding: 1%;
+    margin: 2% auto;
+    // border: 1px solid #2DE0DD;
+    border-radius: 5px;
+    // box-shadow: 0px 0px 15px #447B82;
+    position: relative;
+    z-index: 2;
+    // background: rgba(60, 115, 114, .2);
+    opacity: .9;
+    /* display: none; */
+    min-height: 400px;
+  }
+
+  .galleryItem {
+    float: left;
+    width: 32%;
+    height: 400px;
+    margin-top: 2%;
+    margin-right: 1%;
+    overflow: hidden;
+    cursor: pointer;
+    /* //background:#200; */
+  }
+}

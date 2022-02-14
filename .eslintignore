@@ -1,0 +1,5 @@
+src/locales/
+src/public/
+src/assets/
+src/global.ts
+.eslintrc.js

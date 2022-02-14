@@ -1,0 +1,36 @@
+.card {
+  background: linear-gradient(178deg, rgb(22, 23, 25) 0%, rgb(32, 38, 42) 100%);
+  box-shadow: 0px 4px 24px 0px rgba(17, 19, 21, 0.7);
+}
+.ImportButton {
+  cursor: pointer;
+  padding: 8px 20px;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  color: rgba(255, 255, 255, 0.8);
+  .bg {
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    z-index: -2;
+  }
+  .addIconBox {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 16px;
+  }
+  .title {
+    flex-shrink: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  .displayNone {
+    display: none;
+  }
+}

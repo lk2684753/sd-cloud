@@ -1,0 +1,217 @@
+$optionDefaultColours: #ED5565,#FC6E51,#FFCE54,#2ECC71,#5D9CEC,#AC92EC;
+.IntroCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  //    height:100vh;
+  font-family: 'Roboto', sans-serif;
+  transition: .25s;
+
+  //    @include dark {
+  //       background: #232223;
+  //       color:white;
+  //    }
+  .credit {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+
+    color: inherit;
+  }
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  overflow: hidden;
+
+    // min-width:600px;
+    // max-width:900px;
+    // width:calc(100% - 100px);
+
+  height: 400px;
+
+//   @for $i from 1 through 4 {
+//     @media screen and (max-width:(798px - $i*80)) {
+//       min-width: 600px - $i*80;
+
+//       .option:nth-child(#{6-$i}) {
+//         display: none;
+//       }
+//     }
+//   }
+
+  .option {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    min-width: 60px;
+    margin: 10px;
+    //border:0px solid --defaultColor;
+
+    background: var(--optionBackground, var(--defaultBackground, #E6E9ED));
+    background-size: auto 120%;
+    background-position: center;
+
+    cursor: pointer;
+
+    // transition: .2s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+
+     @for $i from 1 through length($optionDefaultColours) {
+        &:nth-child(#{$i}) {
+           --defaultBackground:#{nth($optionDefaultColours, $i)};
+        }
+     }
+    &.active {
+      flex-grow: 10000;
+      transform: scale(1);
+
+      max-width: 900px;
+      margin: 0px;
+      border-radius: 40px;
+
+      background-size: auto 100%;
+
+      .shadow {
+        box-shadow: inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;
+      }
+
+      .label {
+        bottom: 20px;
+        left: 20px;
+
+        .info {
+          left: 0px;
+          opacity: 1;
+          height: 15px;
+          width: 100%;
+          word-wrap: break-word;
+        //   overflow: hidden;
+        }
+      }
+
+      /*&:active {
+               transform:scale(0.9);
+            }*/
+    }
+
+    &:not(.active) {
+    //   flex-grow: 1;
+
+      border-radius: 30px;
+
+      .shadow {
+        bottom: -40px;
+        box-shadow: inset 0 -120px 0px -120px black, inset 0 -120px 0px -100px black;
+      }
+
+      .label {
+        bottom: 10px;
+        left: 10px;
+
+        .info>div {
+          left: 20px;
+          opacity: 0;
+        }
+      }
+    }
+
+    .shadow {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+
+      height: 120px;
+
+      transition: .5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+    }
+
+    .label {
+      display: flex;
+      position: absolute;
+      right: 0px;
+
+      height: 40px;
+      transition: .5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+
+      .icon {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        min-width: 40px;
+        max-width: 40px;
+        height: 40px;
+        border-radius: 100%;
+
+        background-color: white;
+        color: var(--defaultBackground);
+      }
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        margin-left: 10px;
+        width: 100%;
+        color: white;
+
+        // white-space: pre;
+
+        >div {
+          position: relative;
+
+          transition: .5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity .5s ease-out;
+        }
+
+        .main {
+          font-weight: bold;
+          font-size: 1.2rem;
+        }
+
+        .sub {
+          height: 90px;
+          width: 100%;
+          display: block;
+          word-wrap: break-word;
+          word-break: break-all;
+          transition-delay: .1s;
+        }
+      }
+    }
+  }
+
+  .option:nth-child(1) {
+    background: url(https://bafybeidczn7ufut4ryturdo4b5k3vn5ksi2zse53dozsocqe3dvb3jz2we.ipfs.dweb.link/adi-goldstein-EUsVwEOsblE-unsplash.jpg) no-repeat center;
+    background-size: cover;
+  }
+
+  .option:nth-child(2) {
+    background: url(https://bafybeicoguwen5w7wypn37djjaseawmcvkdonwrjnl3nbusjai66hjs33a.ipfs.dweb.link/jj-ying-8bghKxNU1j0-unsplash.jpg) no-repeat center;
+    background-size: cover;
+  }
+
+  .option:nth-child(3) {
+    background: url(~@/assets/images/payment.jpg) no-repeat center;
+    background-size: cover;
+  }
+
+  .option:nth-child(4) {
+    background: url(https://bafybeifpw4mgexzr6sva4h7yc7wznvisu6r5jclqsswe7fvmswpnfowkgy.ipfs.dweb.link/shahadat-rahman-O2MdroNurVw-unsplash.jpg) no-repeat center;
+    background-size: cover;
+  }
+
+  .option:nth-child(5) {
+    background: url(https://bafybeiaceix6f23czc4e667j2kugwvhqsct27chbz4imz4hsududtorqfi.ipfs.dweb.link/ev-gpjvRZyavZc-unsplash.jpg) no-repeat center;
+    background-size: cover;
+  }
+  .option:nth-child(6) {
+    background: url(https://bafybeihkhwvhttgl5kjk473hgcqumetboblvxwl2oj2ai3qw23fkf3hcuu.ipfs.dweb.link/markus-spiske-FXFz-sW0uwo-unsplash.jpg) no-repeat center;
+    background-size: cover;
+  }
+}

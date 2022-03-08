@@ -12,7 +12,7 @@ export const MULTISIG_CONTRACT_HASHES = process.env.MULTISIG_CONTRACT_HASHES || 
   // https://github.com/near/core-contracts/blob/f93c146d87a779a2063a30d2c1567701306fcae4/multisig/res/multisig.wasm
   '55E7imniT2uuYrECn17qJAk9fLcwQW4ftNSwmCJL5Di',
 ];
-export const NODE_URL = 'http://123.6.102.20:33030';
+export const NODE_URL = 'https://rpc.testnet.near.org';
 export const ACCOUNT_ID_REGEX = /^(([a-z\d]+[-_])*[a-z\d]+\.)*([a-z\d]+[-_])*[a-z\d]+$/;
 export const LOCKUP_ACCOUNT_ID_SUFFIX = process.env.LOCKUP_ACCOUNT_ID_SUFFIX || 'lockup.near';
 export const MIN_BALANCE_FOR_GAS =

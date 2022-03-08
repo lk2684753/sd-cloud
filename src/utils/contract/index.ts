@@ -1,17 +1,15 @@
 import * as nearAPI from 'near-api-js';
-import { NEAR_CONTRACTID, DID_TITLE } from '../near/config';
+import { NEAR_CONTRACTID, DID_TITLE, ACCOUNT_ID_SUFFIX, ACCOUNT_HELPER_URL, NODE_URL } from '../near/config';
 import { Web3Storage } from 'web3.storage/dist/bundle.esm.min.js'
 const API_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweGVlRjQwZDNlRDhERGFENjJjNzk5ZjVmQkJiNDZmMjk3YWJlZTIyOTciLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2NDI5OTIyOTYwMTIsIm5hbWUiOiJmaXJzdF9zZHlfYXBpIn0.9E2Z6owH3YSlf7nD7nYI5Iof2XNh8FPlCUaMfUOvgi0'
 export const client = new Web3Storage({ token: API_TOKEN })
 
 const nearConfig = {
-  networkId: 'default',
-  // nodeUrl: ' http://123.6.102.20:33030',
-  nodeUrl: 'https://rpc.testnet.near.org',
+  networkId: ACCOUNT_ID_SUFFIX,
+  nodeUrl: NODE_URL,
   contractName: NEAR_CONTRACTID,
   walletUrl: "https://wallet.testnet.near.org",
-  // helperUrl: "https://helper.testnet.near.org",
-  // explorerUrl: "https://explorer.testnet.near.org"
+  helperUrl: ACCOUNT_HELPER_URL,
 };
 interface Contract {
   connect: any;
@@ -59,7 +57,7 @@ obj.connect = async () => {
 };
 obj.getAccessKey = async () => {
   console.log(123);
-  
+
   const account = await obj.near.account(obj.getID)
   const key = await account.getAccessKeys()
   console.log(key);
@@ -72,7 +70,6 @@ obj.init = async () => {
     //     keyStore: new nearAPI.keyStores.BrowserLocalStorageKeyStore(),
     //   },
     // });
-    console.log(obj.near);
     obj.walletAccount = new nearAPI.WalletConnection(obj.near, NEAR_CONTRACTID);
     obj.isLogin = obj.walletAccount.isSignedIn();
     console.log('islogin========', obj.isLogin);
@@ -80,7 +77,7 @@ obj.init = async () => {
     obj.getID = obj.walletAccount.getAccountId();
     console.log('getID===========', obj.getID);
 
-    obj.signIn =  () => {
+    obj.signIn = () => {
       obj.walletAccount.requestSignIn(NEAR_CONTRACTID, 'demo');
     };
 

@@ -158,7 +158,7 @@ const Page: React.FC<Props> = (props) => {
                                 {
                                     indentityContentIndex == 3 &&
                                     <div className={styles.indentityContent}>
-                                        0.0.1
+                                        0.2.1
                                     </div>
                                 }
                             </div>
@@ -172,7 +172,10 @@ const Page: React.FC<Props> = (props) => {
                             <Iconfont type='icon-webside-copy' size={20} ></Iconfont>
                         </a>
                         <a href="https://discord.gg/vB5Y4ZR2st" className={styles.indentityBoxIcon}>
-                            <Iconfont type='icon-discord-copy' size={20} ></Iconfont>
+                            <Iconfont type='icon-discord' size={20} ></Iconfont>
+                        </a>
+                        <a href="https://t.me/+CqZWBUd3PTFlY2I1" className={styles.indentityBoxIcon}>
+                            <Iconfont type='icon-telegram' size={20} ></Iconfont>
                         </a>
                     </div>
                 </ul>

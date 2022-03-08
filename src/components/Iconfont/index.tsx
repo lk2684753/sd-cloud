@@ -9,7 +9,7 @@ interface Props {
 
 const Iconfont: React.FC<Props> = (props) => {
   const MyIcon = createFromIconfontCN({
-    scriptUrl: '//at.alicdn.com/t/font_2995112_r81gak40b8.js',
+    scriptUrl: '//at.alicdn.com/t/font_2995112_xnwhmzjjir.js',
   });
   return (
     <MyIcon

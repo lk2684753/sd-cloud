@@ -33,12 +33,6 @@ const LeftMenu: React.FC<Props> = (props) => {
       rightIcon: '',
     },
     {
-      icon: 'icon-jiedian',
-      title: 'peers',
-      url: '/menu/node',
-      rightIcon: '',
-    },
-    {
       icon: 'icon-zuijin',
       title: 'recently used',
       url: '/menu/history',

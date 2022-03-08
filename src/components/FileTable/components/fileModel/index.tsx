@@ -59,7 +59,6 @@ const Page: React.FC<Props> = (props: any) => {
       };
     }
   };
-  //判断文件上传状态
   let fileStatusIcon = (status: string) => {
     if (status === 'Success') {
       return (

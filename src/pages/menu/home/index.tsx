@@ -38,7 +38,7 @@ const Page: React.FC<Props> = (props) => {
     },
     {
       icon: 'icon-cunchushuliang',
-      title: 'Number of stored fil',
+      title: 'Number of stored file',
       number: '0',
       unit: '',
     },
@@ -96,7 +96,7 @@ const Page: React.FC<Props> = (props) => {
       },
       {
         icon: 'icon-cunchushuliang',
-        title: 'Number of stored fil',
+        title: 'Number of stored file',
         number: result.files_num,
         unit: '',
       },

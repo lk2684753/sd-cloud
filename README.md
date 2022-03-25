@@ -11,7 +11,11 @@ Based on the `NEAR` public chain, combined with the distributed storage technolo
 
 - [Creating a NEAR account](https://github.com/lk2684753/sd-cloud/blob/main/docs/Creating%20a%20NEAR%20Account.md)
 - [Storage concept](https://github.com/lk2684753/sd-cloud/blob/main/docs/Concepts.md)
+- [Features](https://github.com/lk2684753/sd-cloud#-features)
+- [How to use](https://github.com/lk2684753/sd-cloud#-how-to-use)
+- [Content-persistence](https://github.com/lk2684753/sd-cloud#%EF%B8%8F-content-persistence)
 - [Video tutorials](https://youtu.be/qeJCufNAhI0)
+- [Data-policy](https://github.com/lk2684753/sd-cloud#%EF%B8%8F-data-policy)
 - [Discord channel for support](https://discord.gg/vB5Y4ZR2st)
 - [Telegram channel for support](https://t.me/+WF6U4DMqkPkxODU1)
 ## 🚀 Features

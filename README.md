@@ -9,9 +9,11 @@
 
 Based on the `NEAR` public chain, combined with the distributed storage technology `IPFS` and `Filecoin`, you can store your files in the [SDCloud](https://sdcloud.on.fleek.co/).
 
-- [Creating a NEAR Account](https://github.com/lk2684753/sd-cloud/blob/main/docs/Creating%20a%20NEAR%20Account.md)
-- [Storage Concept](https://github.com/lk2684753/sd-cloud/blob/main/docs/Concepts.md)
-
+- [Creating a NEAR account](https://github.com/lk2684753/sd-cloud/blob/main/docs/Creating%20a%20NEAR%20Account.md)
+- [Storage concept](https://github.com/lk2684753/sd-cloud/blob/main/docs/Concepts.md)
+- [Video tutorials](https://youtu.be/qeJCufNAhI0)
+- [Discord channel for support](https://discord.gg/vB5Y4ZR2st)
+- [Telegram channel for support](https://t.me/+WF6U4DMqkPkxODU1)
 ## 🚀 Features
 
 - You can start storing your files in minutes.

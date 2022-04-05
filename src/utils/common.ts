@@ -1,7 +1,7 @@
 import { PREVIEW_FILES } from './cluster/config';
 import * as nearApiJs from 'near-api-js';
 import * as nearConfig from '@/utils/near/config';
-import Constract from '@/utils/contract'
+import Constract from '@/utils/contract';
 import axios from 'axios';
 
 export const setElectronLocalStorage = () => {
@@ -11,7 +11,7 @@ export const setElectronLocalStorage = () => {
       //dist url change
       axios
         .post(`http://localhost:${port}/api/setLocalStorage`, {
-        // .post(`https://sdcloudstorage.on.fleek.co:${port}/api/setLocalStorage`, {
+          // .post(`https://sdcloudstorage.on.fleek.co:${port}/api/setLocalStorage`, {
           localStorage: JSON.stringify(localStorage),
         })
         .then((res: any) => {})
@@ -23,21 +23,25 @@ export const setElectronLocalStorage = () => {
 };
 
 export const sidToCid = (sid: string) => {
-  return sid  
+  return sid;
 };
 
-export const getCidUrl = (cid: string,name:string) => {
+export const getCidUrl = (cid: string, name: string) => {
   if (!cid) return '';
   console.log(name);
-  
-  let url = PREVIEW_FILES + cid+'.ipfs.dweb.link/'+name;
-  console.log('url==================',url);
-  
+
+  let url = PREVIEW_FILES + cid + '.ipfs.dweb.link/' + name;
+  console.log('url==================', url);
+
   return url;
 };
-
+export const getIPFSCidUrl = (cid: string) => {
+  if (!cid) return '';
+  let url = 'http://122.114.19.250:18080/ipfs/' + cid;
+  return url;
+};
 export const cidToSid = (cid: string) => {
- return cid
+  return cid;
 };
 
 export const getAccount = async (accountId: string) => {
@@ -49,7 +53,7 @@ export const getAccount = async (accountId: string) => {
   let account = new nearApiJs.Account(connection, accountId);
   return account;
 };
-const parseUrl = (url:any) => {
+const parseUrl = (url: any) => {
   const a = document.createElement('a');
   a.href = url;
   return {
@@ -58,8 +62,8 @@ const parseUrl = (url:any) => {
     host: a.hostname,
     port: a.port,
     query: a.search,
-    params: (function() {
-      const ret:any = {};
+    params: (function () {
+      const ret: any = {};
       const seg = a.search.replace(/^\?/, '').split('&');
       const len = seg.length;
       let i = 0;
@@ -76,24 +80,16 @@ const parseUrl = (url:any) => {
     file: (a.pathname.match(/\/([^/?#]+)$/i) || [, ''])[1],
     hash: a.hash.replace('#', ''),
     path: a.pathname.replace(/^([^/])/, '/$1'),
-    relative: (a.href.match(/tps?:\/\/[^/]+(.+)/) || [
-      ,
-      '',
-    ])[1],
+    relative: (a.href.match(/tps?:\/\/[^/]+(.+)/) || [, ''])[1],
     segments: a.pathname.replace(/^\//, '').split('/'),
   };
 };
 export const recoverAccount = async () => {
-  
   // let {createFullAccessKey,signIn} = Constract
-  // const keypair = await createFullAccessKey()    
+  // const keypair = await createFullAccessKey()
   // const userInfo = JSON.parse(localStorage.getItem('undefined_wallet_auth_key')||'')
   // // const userId = decodeURIComponent(parseUrl(location.href).params.account_id)
   // const pubilckey = decodeURIComponent(parseUrl(location.href).params.all_keys)
   // console.log(pubilckey);
-  
   // localStorage.setItem(`near-api-js:keystore:${userInfo.accountId}:${nearConfig.ACCOUNT_ID_SUFFIX}`, keypair);
-
 };
-
-

@@ -18,7 +18,7 @@ export const LOCKUP_ACCOUNT_ID_SUFFIX = process.env.LOCKUP_ACCOUNT_ID_SUFFIX || 
 export const MIN_BALANCE_FOR_GAS =
   process.env.REACT_APP_MIN_BALANCE_FOR_GAS || nearApiJs.utils.format.parseNearAmount('0.05');
 export const REACT_APP_USE_TESTINGLOCKUP = process.env.REACT_APP_USE_TESTINGLOCKUP;
-export const NEAR_CONTRACTID = 'dev-1643075353301-97924219324147';
+export const NEAR_CONTRACTID = 'dev-1649136722701-47866898299444';
 // export const NEAR_CONTRACTID = 'dev-1642989436813-52543682623145';
 export const GAS = '300000000000000';
 export const DID_TITLE = 'did:near:';

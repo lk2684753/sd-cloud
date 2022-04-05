@@ -44,10 +44,8 @@ export default {
         });
         
         let parseResult = JSON.parse(result);
-        console.log(parseResult);
         
         let image = getCidUrl(parseResult.account.account_images,parseResult.account.account_images_name);
-        console.log(image);
         yield put({
           type: 'save',
           state: {
@@ -58,7 +56,6 @@ export default {
           },
         });
       } catch (error) {
-        console.log('[ error ]-53', error);
       }
     },
   },

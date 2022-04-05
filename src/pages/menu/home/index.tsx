@@ -9,11 +9,10 @@ import { formatBytes } from '@/utils/filter/index';
 let { contract, getID } = Contract;
 import LogoCircle from '@/components/logoCircle'
 import { history } from 'umi';
-import Intro from '@/components/introBox'
-import homeBackImg from '@/assets/images/homeBack.png'
-import { getUploadFiles } from '@/utils/files/uploadFiles';
-import { getRecentlyList } from '@/utils/files/recentlyFiles';
-import Empty from '@/components/Empty';
+import {Carousel} from 'antd'
+import IPFSItem from '@/components/HomeCarouselItem/IPFSItem'
+import Web3Item from '@/components/HomeCarouselItem/Web3Item'
+import SettingItem from '@/components/HomeCarouselItem/SettingItem'
 
 interface Props { }
 
@@ -43,36 +42,7 @@ const Page: React.FC<Props> = (props) => {
       unit: '',
     },
   ]);
-  let CardListRender = () => {
-    return cardList.map((item, index) => {
-      return (
-        <div className={styles.rotateTable}>
-        <div className={styles.rotateBox}>
-        <Card defaultBorder={false} borderAnimation background="#2E3139" radius={20} key={index}>
-          <div className={styles.CardBox}>
 
-          </div>
-        </Card>
-        </div>
-        <div className={styles.CardHover} key={index}>
-          
-          <Card defaultBorder={false} borderAnimation background="#33373F" radius={20} key={index}>
-            <div className={styles.CardBox}>
-              <div className={styles.icon}>
-                <Iconfont type={item.icon} size={28}></Iconfont>
-              </div>
-              <div className={styles.title}>{item.title}</div>
-              <div className={styles.printUnit}>
-                {item.number}
-                <div className={styles.unit}>{item.unit}</div>
-              </div>
-            </div>
-          </Card>
-        </div>
-        </div>
-      );
-    });
-  };
   const getList = async () => {
     let result = await contract.view_account({ did: `did:near:${getID}` });
 
@@ -114,20 +84,12 @@ const Page: React.FC<Props> = (props) => {
 
   return (
     <>
-      {/* <LogoCircle></LogoCircle> */}
-          <Intro/>
-      <img className={styles.backImage} src={homeBackImg} height={windowHeight} alt="" />
-      <div className={styles.home}>
-        <div className={styles.leftContext}>
-          {/* {nodeRender()} */}
-          <Space height={40}></Space>
-          <div className={styles.CardList}>{CardListRender()}</div>
-        </div>
-        <div className={`${styles.rightContext} rightContext`}>
-          {/* <AudioMini></AudioMini> */}
-          {/* <NetWork></NetWork> */}
-        </div>
-      </div>
+     <Carousel effect="fade" autoplay>
+      <IPFSItem cardList={cardList}>
+      </IPFSItem>
+      <Web3Item/>
+      {/* <SettingItem/> */}
+     </Carousel>
     </>
   );
 };

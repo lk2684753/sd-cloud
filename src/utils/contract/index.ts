@@ -3,7 +3,6 @@ import { NEAR_CONTRACTID, DID_TITLE, ACCOUNT_ID_SUFFIX, ACCOUNT_HELPER_URL, NODE
 import { Web3Storage } from 'web3.storage/dist/bundle.esm.min.js'
 const API_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweGVlRjQwZDNlRDhERGFENjJjNzk5ZjVmQkJiNDZmMjk3YWJlZTIyOTciLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2NDI5OTIyOTYwMTIsIm5hbWUiOiJmaXJzdF9zZHlfYXBpIn0.9E2Z6owH3YSlf7nD7nYI5Iof2XNh8FPlCUaMfUOvgi0'
 export const client = new Web3Storage({ token: API_TOKEN })
-
 const nearConfig = {
   networkId: ACCOUNT_ID_SUFFIX,
   nodeUrl: NODE_URL,
@@ -111,7 +110,8 @@ obj.init = async () => {
           'save_account_image',
           'file_share',
           'file_rename',
-          'save_account_name'
+          'save_account_name',
+          'save_account_custom_node'
         ],
         sender: obj.walletAccount.getAccountId(),
       },

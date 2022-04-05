@@ -12,7 +12,7 @@ const Page: React.FC<Props> = (props) => {
     const list = getRecentlyList(10);
     return list;
   };
-  return <FileTable noData="Mo Usage Record" getList={getList} title={title} />;
+  return <FileTable noData="No Usage Record" getList={getList} title={title} />;
 };
 
 function mapStateToProps(state: any) {

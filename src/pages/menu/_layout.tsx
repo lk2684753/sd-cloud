@@ -36,7 +36,7 @@ const Page: React.FC<Props> = (props) => {
           style={{ backgroundColor: 'rgba(0,0,0,0)' }}
           closable={false}
         >
-      <UserInfoPop userInfoPopDisabled={userInfoPopDisabled}></UserInfoPop>
+      <UserInfoPop userInfoPopDisabled={userInfoPopDisabled} setUserInfoPopDisabled={setUserInfoPopDisabled}></UserInfoPop>
       </Modal>
     </div>
   );

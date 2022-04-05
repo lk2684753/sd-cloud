@@ -7,7 +7,7 @@ import Card from '@/components/Card';
 import { useInfiniteScroll, useSetState } from 'ahooks';
 import FileSetBottom from '../FileSetBottom';
 import { dataFormat, formatBytes } from '@/utils/filter';
-import { cidToSid, getCidUrl, sidToCid } from '@/utils/common';
+import { cidToSid, getCidUrl,getIPFSCidUrl, sidToCid } from '@/utils/common';
 import { setRecentlyList, deleteRecentlyList } from '@/utils/files/recentlyFiles';
 import Contract, { client } from '@/utils/contract';
 let { getlist, contract, getID } = Contract;
@@ -15,7 +15,7 @@ import { history } from 'umi';
 import { setUploadFiles } from '@/utils/files/uploadFiles';
 import axios from 'axios';
 import Empty from '@/components/Empty';
-import PageLoading from '@/components/PageLoading'
+import PageLoading from '@/components/PageLoading';
 import { folder } from 'jszip';
 interface HeaderList {
   key: string;
@@ -49,7 +49,14 @@ interface Props {
 }
 
 const Table: React.FC<Props> = (props) => {
-  const [pageLoading, setpageLoading] = useState(false)
+  const [pageLoading, setpageLoading] = useState(false);
+  const [userAccount,setUserAccount] = useState('')
+  useEffect(()=>{
+    (async()=>{
+      const userAccountData = JSON.parse(await contract.view_account({ did: `did:near:${getID}` }));
+      setUserAccount(userAccountData.account.account_custom_node_name)
+    })()
+  },[])
   let setList = [
     {
       key: 'download',
@@ -130,7 +137,6 @@ const Table: React.FC<Props> = (props) => {
     },
   ];
 
-
   function download(index: any) {
     if (typeof index === 'object') {
       data?.list.map((res, index1) => {
@@ -148,7 +154,7 @@ const Table: React.FC<Props> = (props) => {
     // props.setFileModelDisplay(true);
     let item = data?.list[index];
     let cid = item.cid;
-    let url = getCidUrl(cid, item.file_name);
+    let url = item.network_id == 0?getCidUrl(cid, item.file_name):getIPFSCidUrl(cid);
     if (!item) return;
     let fileName = item.file_name;
     const setFiles = data?.list[index];
@@ -235,7 +241,7 @@ const Table: React.FC<Props> = (props) => {
     next: boolean;
   }
 
-  //A list of compontents for page rendering 
+  //A list of compontents for page rendering
   const refContent = useRef(null);
   let { data, loading, loadMore, loadingMore, noMore, reload } = useInfiniteScroll(
     (d) => {
@@ -249,35 +255,43 @@ const Table: React.FC<Props> = (props) => {
     },
   );
   async function getLoadMoreList(nextPage = 0): Promise<Result> {
-    setpageLoading(true)
+    setpageLoading(true);
     let list = [];
     let next = false;
     try {
       list = await props.getList(nextPage);
       list = getlist(list);
-      let results = await Promise.all(list.map(async (items: any) => {
-        let result = await client.status(items.cid)
-        if (result.pins.some((res: any) => {
-          return res.status == 'Pinning'
-        })) {
-          items.pinStatus = 'Pinning'
-        } else if (result.pins.some((res: any) => {
-          return res.status == 'Pinned'
-        })) {
-          items.pinStatus = 'Pinned'
-        } else {
-          items.pinStatus = 'PinQueued'
-        }
-        let storageProvidersArr = []
-        if (result.deals.length != 0) {
-          result.deals.forEach((res: any) => {
-            storageProvidersArr.push(res)
-          })
-        } else {
-          storageProvidersArr.push('Queuing')
-        }
-        items.storageProviders = storageProvidersArr
-      }))
+      let results = await Promise.all(
+        list.map(async (items: any) => {
+          if (items.network_id == 0) {
+            let result = await client.status(items.cid);
+            if (
+              result.pins.some((res: any) => {
+                return res.status == 'Pinning';
+              })
+            ) {
+              items.pinStatus = 'Pinning';
+            } else if (
+              result.pins.some((res: any) => {
+                return res.status == 'Pinned';
+              })
+            ) {
+              items.pinStatus = 'Pinned';
+            } else {
+              items.pinStatus = 'PinQueued';
+            }
+            let storageProvidersArr = [];
+            if (result.deals.length != 0) {
+              result.deals.forEach((res: any) => {
+                storageProvidersArr.push(res);
+              });
+            } else {
+              storageProvidersArr.push('Queuing');
+            }
+            items.storageProviders = storageProvidersArr;
+          }
+        }),
+      );
       if (props.title === 'recently used') {
         throw Error;
       }
@@ -288,9 +302,9 @@ const Table: React.FC<Props> = (props) => {
         nextPage = nextPage + 1;
         next = true;
       }
-      setpageLoading(false)
+      setpageLoading(false);
     } catch (error) {
-      setpageLoading(false)
+      setpageLoading(false);
       console.warn(error);
     }
     return {
@@ -340,7 +354,7 @@ const Table: React.FC<Props> = (props) => {
       state: {
         audioList: data?.list,
       },
-    });
+    });  
   }, [data, tableCheckedList]);
 
   interface State {
@@ -443,16 +457,21 @@ const Table: React.FC<Props> = (props) => {
       return false;
     }
     const storageProvidersHover = (item: any) => {
-      return <div>
-        <ul>
-          {
-            item.map((res: any, index: number) => {
-              return <li key={index}><a href={`https://filfox.info/en/deal/${res.dealId}`}>{res.storageProvider}</a><span>  {res.status}</span></li>
-            })
-          }
-        </ul>
-      </div>
-    }
+      return (
+        <div>
+          <ul>
+            {item.map((res: any, index: number) => {
+              return (
+                <li key={index}>
+                  <a href={`https://filfox.info/en/deal/${res.dealId}`}>{res.storageProvider}</a>
+                  <span> {res.status}</span>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      );
+    };
     return data?.list?.map((item, index) => {
       let trRender = (item: any) => {
         let nameRender = () => {
@@ -525,25 +544,35 @@ const Table: React.FC<Props> = (props) => {
           if (headerItem.key === 'file_size') {
             r = <span>{formatBytes(item[headerItem.key], 2)}</span>;
           }
-          if (headerItem.key == 'storageProviders') {
-            if (typeof (item[headerItem.key][0]) != 'string') {
-              r = <Popover content={storageProvidersHover(item[headerItem.key])}>
-                <div style={{ color: '#00b8c4' }}>Details</div>
-              </Popover>
-            } else {
-              r = <div>{item[headerItem.key][0]}</div>
+          if (headerItem.key == 'storageProviders' && item.network_id == 0) {
+            if (typeof item[headerItem.key][0] != 'string' && item.network_id == 0) {
+              r = (
+                <Popover content={storageProvidersHover(item[headerItem.key])}>
+                  <div style={{ color: '#00b8c4' }}>Details</div>
+                </Popover>
+              );
+            } else if (typeof item[headerItem.key][0] == 'string') {
+              r = <div>{item[headerItem.key][0]}</div>;
             }
-
+          }else if(headerItem.key == 'storageProviders' &&item.network_id == 1){
+            r = <div>IPFS_NODE</div>
+          }else if(headerItem.key == 'storageProviders' &&item.network_id == 2){            
+            r= <div>{userAccount}</div>
           }
           if (headerItem.key === 'created') {
             r = <span>{dataFormat(item[headerItem.key])}</span>;
           }
+          if (headerItem.key === 'pinStatus' && item.network_id == 0) {
+            r = <span>{item[headerItem.key]}</span>;
+          }else if(headerItem.key === 'pinStatus' && item.network_id == 1){
+            r = <span>IPFS_NODE</span>;
+          }else if(headerItem.key === 'pinStatus' && item.network_id == 2){
+            r = <span>{userAccount}</span>;
+          }
           if (headerItem.key === 'cid') {
             r = (
               <Popover content={item[headerItem.key]}>
-                <div className={styles.keyBox}>
-                  {item[headerItem.key]}
-                </div>
+                <div className={styles.keyBox}>{item[headerItem.key]}</div>
               </Popover>
             );
           }
@@ -566,9 +595,8 @@ const Table: React.FC<Props> = (props) => {
             setRecentlyList(item);
 
             if (item.file_folder[0] !== 'music') {
-
               props.setPreviewState({
-                previewURL: getCidUrl(item.cid, item.file_name),
+                previewURL: item.network_id == 0?getCidUrl(item.cid, item.file_name):getIPFSCidUrl(item.cid),
                 isPreview: true,
                 previewType: '',
                 fileType: item.file_type,
@@ -616,7 +644,6 @@ const Table: React.FC<Props> = (props) => {
       );
     });
   };
-
 
   async function changeName(e: any) {
     setNameEditIndex({ ...nameEditIndex, status: 'loading' });
@@ -666,9 +693,8 @@ const Table: React.FC<Props> = (props) => {
     }
     if (!data?.nextPage && !data?.list.length && !pageLoading) {
       return <Empty image={props.noDataImage} title={props.noData}></Empty>;
-    }
-    else if (pageLoading) {
-      return <PageLoading />
+    } else if (pageLoading) {
+      return <PageLoading />;
     }
     return (
       <>

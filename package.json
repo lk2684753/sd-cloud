@@ -48,6 +48,7 @@
     "money-clip": "^3.0.5",
     "multiaddr": "^10.0.1",
     "near-api-js": "^0.44.1",
+    "npm": "^8.3.0",
     "react": "17.x",
     "react-copy-to-clipboard": "^5.0.4",
     "react-dom": "17.x",

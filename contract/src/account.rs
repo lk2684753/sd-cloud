@@ -10,6 +10,8 @@ pub struct Account {
     pub account_images_name: String,
     pub account_images: String,
     pub account_api_token: String,
+    pub account_custom_node:String,
+    pub account_custom_node_name:String
 }
 
 impl Account {
@@ -19,6 +21,8 @@ impl Account {
             account_images_name: String::new(),
             account_images: String::new(),
             account_api_token: String::new(),
+            account_custom_node: String::new(),
+            account_custom_node_name: String::new(),
         }
     }
 }
@@ -64,5 +68,16 @@ impl Contract {
         let api = String::from("api");
         self.account_token.insert(&api, &token);
         true
+    }
+
+    pub fn save_account_custom_node(&mut self, custom_node: String,node_name:String) -> bool {
+       let account_id = env::signer_account_id();
+       let did = gen_did(account_id);
+
+       let mut account = self.account.get(&did).unwrap_or(Account::new_default());
+       account.account_custom_node = custom_node;
+       account.account_custom_node_name= node_name;
+       self.account.insert(&did, &account);
+       true
     }
 }

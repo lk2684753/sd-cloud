@@ -18,10 +18,11 @@ pub struct File {
     pub file_size: f64,
     pub file_folder: Vec<String>,
     pub created: u64,
+    pub network_id: u64,
 }
 
 impl File {
-    pub fn new_default(holder: String,cid: String, file_name: String, file_type: String, file_size: f64, file_folder: Vec<String>, created: u64) -> Self {
+    pub fn new_default(holder: String,cid: String, file_name: String, file_type: String, file_size: f64, file_folder: Vec<String>, created: u64,network_id: u64) -> Self {
         File {
             holder,
             cid,
@@ -30,6 +31,7 @@ impl File {
             file_size,
             file_folder,
             created,
+            network_id,
         }
     }
 }
@@ -41,7 +43,7 @@ impl Contract {
     ///file_store
     ///
     ///this method adds the relevant file information
-    pub fn store(&mut self, cid: String, file_name: String, file_type: String, file_size: f64, file_owner_folder: Vec<String>) -> bool {
+    pub fn store(&mut self, cid: String, file_name: String, file_type: String, file_size: f64, file_owner_folder: Vec<String>,network_id:u64) -> bool {
         let account_id = env::signer_account_id();
         let did = gen_did(account_id);
 
@@ -55,7 +57,9 @@ impl Contract {
             file_name, file_type,
             file_size.clone(),
             file_folder,
-            env::block_timestamp());
+            env::block_timestamp(),
+          network_id
+        );
 
         self.file_index.insert(&cid, &f);
         self.files_store(cid.clone(), &did);

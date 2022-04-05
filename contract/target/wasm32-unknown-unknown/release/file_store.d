@@ -1,0 +1,1 @@
+/home/lk/sd-cloud/contract/target/wasm32-unknown-unknown/release/file_store.wasm: /home/lk/sd-cloud/contract/src/account.rs /home/lk/sd-cloud/contract/src/did.rs /home/lk/sd-cloud/contract/src/file.rs /home/lk/sd-cloud/contract/src/lib.rs /home/lk/sd-cloud/contract/src/view.rs
